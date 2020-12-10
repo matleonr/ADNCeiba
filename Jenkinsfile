@@ -29,6 +29,12 @@ pipeline {
         ])
       }
     }
+
+    stage('Build') {
+      steps {
+        echo "------------>Build<------------"
+      }
+    }  
     
     stage('Compile & Unit Tests') {
       steps{
@@ -46,11 +52,7 @@ pipeline {
       }
     }
 
-    stage('Build') {
-      steps {
-        echo "------------>Build<------------"
-      }
-    }  
+    
   }
 
   post {

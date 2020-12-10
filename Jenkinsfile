@@ -18,11 +18,12 @@ pipeline {
         echo "------------>Checkout<------------"
         checkout([
           $class: 'GitSCM', 
-          branches: [[name: 'master']], 
+          branches: [[name: 'main']], 
           doGenerateSubmoduleConfigurations: false, 
           extensions: [], 
           submoduleCfg: [], 
           userRemoteConfigs: [[
+            credentialsId: 'GitHub_matleonr', 
             url:'https://github.com/matleonr/ADNCeiba.git'
           ]]
         ])

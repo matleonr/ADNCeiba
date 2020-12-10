@@ -21,7 +21,6 @@ pipeline {
           branches: [[name: 'master']], 
           doGenerateSubmoduleConfigurations: false, 
           extensions: [], 
-          gitTool: 'Default', 
           submoduleCfg: [], 
           userRemoteConfigs: [[
             credentialsId: 'GitHub_matleonr', 

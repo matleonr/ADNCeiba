@@ -23,7 +23,6 @@ pipeline {
           extensions: [], 
           submoduleCfg: [], 
           userRemoteConfigs: [[
-            credentialsId: 'GitHub_matleonr', 
             url:'https://github.com/matleonr/ADNCeiba.git'
           ]]
         ])

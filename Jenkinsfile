@@ -16,16 +16,16 @@ pipeline {
     stage('Checkout') {
       steps{
         echo "------------>Checkout<------------"
-        // checkout([
-        //   $class: 'GitSCM', 
-        //   branches: [[name: 'master']], 
-        //   doGenerateSubmoduleConfigurations: false, 
-        //   extensions: [], 
-        //   submoduleCfg: [], 
-        //   userRemoteConfigs: [[
-        //     credentialsId: 'GitHub_matleonr', 
-        //     url:'https://github.com/matleonr/ADNCeiba.git'
-        //   ]]
+        checkout([
+          $class: 'GitSCM', 
+          branches: [[name: 'master']], 
+          doGenerateSubmoduleConfigurations: false, 
+          extensions: [], 
+          submoduleCfg: [], 
+          userRemoteConfigs: [[
+            credentialsId: 'GitHub_matleonr', 
+            url:'https://github.com/matleonr/ADNCeiba.git'
+          ]]
         ])
       }
     }

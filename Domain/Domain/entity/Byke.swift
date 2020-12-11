@@ -11,6 +11,11 @@ public class Byke: Vehicle {
     
     private var cylinderCapacity: Int
     
+    public init() {
+        self.setHourPrice(hourPrice: 500)
+        self.setDayPrice(dayPrice: 4000)
+    }
+    
     public func getCylinderCapacity() -> String {
         return cylinderCapacity
     }

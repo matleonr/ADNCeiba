@@ -39,7 +39,7 @@ public class Vehicle {
         //TODO Hacer calculo de horas en el parqueadero
     }
     
-    public func setHourPrice(dayPrice: Int) {
+    public func setDayPrice(dayPrice: Int) {
         self.dayPrice = dayPrice
     }
     

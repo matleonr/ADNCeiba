@@ -10,11 +10,12 @@
 		0D1E923C706A8C62027E4F90 /* Pods_ADNCeibaTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 108D2055E650429D5AF73B5B /* Pods_ADNCeibaTests.framework */; };
 		46BDF6587E73A7E609308779 /* Pods_ADNCeiba_ADNCeibaUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CF60DAE7B6574D8DC2EEE1F5 /* Pods_ADNCeiba_ADNCeibaUITests.framework */; };
 		9A59C3F5257834EE0053E989 /* ADNCeibaApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A59C3F4257834EE0053E989 /* ADNCeibaApp.swift */; };
-		9A59C3F7257834EE0053E989 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A59C3F6257834EE0053E989 /* ContentView.swift */; };
+		9A59C3F7257834EE0053E989 /* EnterVehicleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A59C3F6257834EE0053E989 /* EnterVehicleView.swift */; };
 		9A59C3F9257834F30053E989 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9A59C3F8257834F30053E989 /* Assets.xcassets */; };
 		9A59C3FC257834F30053E989 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9A59C3FB257834F30053E989 /* Preview Assets.xcassets */; };
 		9A59C407257834F40053E989 /* ADNCeibaTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A59C406257834F40053E989 /* ADNCeibaTests.swift */; };
 		9A59C412257834F40053E989 /* ADNCeibaUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A59C411257834F40053E989 /* ADNCeibaUITests.swift */; };
+		9A9914E42583D5E000D15ABC /* LandscapeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A9914E32583D5E000D15ABC /* LandscapeView.swift */; };
 		C002F5FCBD5D2C622ABABA5D /* Pods_ADNCeiba.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 40D65FB7F939FC32B027F4EE /* Pods_ADNCeiba.framework */; };
 /* End PBXBuildFile section */
 
@@ -67,7 +68,7 @@
 		9A1FC02A2582EBF80022697C /* Domain.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Domain.xcodeproj; path = Domain/Domain.xcodeproj; sourceTree = "<group>"; };
 		9A59C3F1257834EE0053E989 /* Presentation.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Presentation.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9A59C3F4257834EE0053E989 /* ADNCeibaApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ADNCeibaApp.swift; sourceTree = "<group>"; };
-		9A59C3F6257834EE0053E989 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		9A59C3F6257834EE0053E989 /* EnterVehicleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnterVehicleView.swift; sourceTree = "<group>"; };
 		9A59C3F8257834F30053E989 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		9A59C3FB257834F30053E989 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		9A59C3FD257834F30053E989 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -77,6 +78,7 @@
 		9A59C40D257834F40053E989 /* PresentationUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PresentationUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		9A59C411257834F40053E989 /* ADNCeibaUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ADNCeibaUITests.swift; sourceTree = "<group>"; };
 		9A59C413257834F40053E989 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		9A9914E32583D5E000D15ABC /* LandscapeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LandscapeView.swift; sourceTree = "<group>"; };
 		A5980757871A402C7CDB5E65 /* Pods-ADNCeiba-ADNCeibaUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ADNCeiba-ADNCeibaUITests.debug.xcconfig"; path = "Target Support Files/Pods-ADNCeiba-ADNCeibaUITests/Pods-ADNCeiba-ADNCeibaUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		CF60DAE7B6574D8DC2EEE1F5 /* Pods_ADNCeiba_ADNCeibaUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ADNCeiba_ADNCeibaUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -169,10 +171,11 @@
 			isa = PBXGroup;
 			children = (
 				9A59C3F4257834EE0053E989 /* ADNCeibaApp.swift */,
-				9A59C3F6257834EE0053E989 /* ContentView.swift */,
+				9A59C3F6257834EE0053E989 /* EnterVehicleView.swift */,
 				9A59C3F8257834F30053E989 /* Assets.xcassets */,
 				9A59C3FD257834F30053E989 /* Info.plist */,
 				9A59C3FA257834F30053E989 /* Preview Content */,
+				9A9914E32583D5E000D15ABC /* LandscapeView.swift */,
 			);
 			path = ADNCeiba;
 			sourceTree = "<group>";
@@ -470,8 +473,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9A59C3F7257834EE0053E989 /* ContentView.swift in Sources */,
+				9A59C3F7257834EE0053E989 /* EnterVehicleView.swift in Sources */,
 				9A59C3F5257834EE0053E989 /* ADNCeibaApp.swift in Sources */,
+				9A9914E42583D5E000D15ABC /* LandscapeView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

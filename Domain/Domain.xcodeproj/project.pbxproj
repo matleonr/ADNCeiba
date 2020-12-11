@@ -97,6 +97,7 @@
 		9A1FBFF92582EBF30022697C /* Domain */ = {
 			isa = PBXGroup;
 			children = (
+				9A9915542583F5A700D15ABC /* Model */,
 				9A1FC054258302070022697C /* valueobject */,
 				9A1FC053258301EB0022697C /* service */,
 				9A1FC052258301DA0022697C /* repository */,
@@ -162,6 +163,13 @@
 			children = (
 			);
 			path = valueobject;
+			sourceTree = "<group>";
+		};
+		9A9915542583F5A700D15ABC /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

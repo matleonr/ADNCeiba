@@ -1,0 +1,23 @@
+{
+  "images" : [
+    {
+      "filename" : "motorcycle-motorbike-transportation-bike-wheel--removebg-preview.png",
+      "idiom" : "universal",
+      "scale" : "1x"
+    },
+    {
+      "filename" : "motorcycle-motorbike-transportation-bike-wheel--removebg-preview-1.png",
+      "idiom" : "universal",
+      "scale" : "2x"
+    },
+    {
+      "filename" : "motorcycle-motorbike-transportation-bike-wheel--removebg-preview-2.png",
+      "idiom" : "universal",
+      "scale" : "3x"
+    }
+  ],
+  "info" : {
+    "author" : "xcode",
+    "version" : 1
+  }
+}

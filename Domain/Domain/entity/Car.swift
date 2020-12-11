@@ -9,13 +9,8 @@ import Foundation
 
 public class Car: Vehicle {
     
-//    private var cylinderCapacity: Int
-//    
-//    public func getCylinderCapacity() -> String {
-//        return cylinderCapacity
-//    }
-//    
-//    public func setCylinderCapacity(cylinderCapacity: Int) {
-//        self.cylinderCapacity = cylinderCapacity
-//    }
+    public init() {
+        self.setHourPrice(hourPrice: 1000)
+        self.setDayPrice(dayPrice: 8000)
+    }
 }

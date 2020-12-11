@@ -2,6 +2,16 @@
 <Workspace
    version = "1.0">
    <FileRef
+      location = "group:Presentation/Presentation.xcodeproj">
+   </FileRef>
+   <FileRef
+      location = "group:example/example.xcodeproj">
+   </FileRef>
+   <Group
+      location = "container:"
+      name = "Infrastructure">
+   </Group>
+   <FileRef
       location = "group:Domain/Domain.xcodeproj">
    </FileRef>
    <FileRef

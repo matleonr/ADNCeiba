@@ -1,0 +1,6 @@
+framework module Pods_ADNCeiba_ADNCeibaUITests {
+  umbrella header "Pods-ADNCeiba-ADNCeibaUITests-umbrella.h"
+
+  export *
+  module * { export * }
+}

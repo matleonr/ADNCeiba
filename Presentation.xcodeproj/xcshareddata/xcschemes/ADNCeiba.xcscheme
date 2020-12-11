@@ -15,9 +15,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "9A59C3F0257834EE0053E989"
-               BuildableName = "ADNCeiba.app"
-               BlueprintName = "ADNCeiba"
-               ReferencedContainer = "container:ADNCeiba.xcodeproj">
+               BuildableName = "Presentation.app"
+               BlueprintName = "Presentation"
+               ReferencedContainer = "container:Presentation.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -33,9 +33,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "9A59C401257834F40053E989"
-               BuildableName = "ADNCeibaTests.xctest"
-               BlueprintName = "ADNCeibaTests"
-               ReferencedContainer = "container:ADNCeiba.xcodeproj">
+               BuildableName = "PresentationTests.xctest"
+               BlueprintName = "PresentationTests"
+               ReferencedContainer = "container:Presentation.xcodeproj">
             </BuildableReference>
          </TestableReference>
          <TestableReference
@@ -43,9 +43,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "9A59C40C257834F40053E989"
-               BuildableName = "ADNCeibaUITests.xctest"
-               BlueprintName = "ADNCeibaUITests"
-               ReferencedContainer = "container:ADNCeiba.xcodeproj">
+               BuildableName = "PresentationUITests.xctest"
+               BlueprintName = "PresentationUITests"
+               ReferencedContainer = "container:Presentation.xcodeproj">
             </BuildableReference>
          </TestableReference>
       </Testables>
@@ -65,9 +65,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "9A59C3F0257834EE0053E989"
-            BuildableName = "ADNCeiba.app"
-            BlueprintName = "ADNCeiba"
-            ReferencedContainer = "container:ADNCeiba.xcodeproj">
+            BuildableName = "Presentation.app"
+            BlueprintName = "Presentation"
+            ReferencedContainer = "container:Presentation.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </LaunchAction>
@@ -82,9 +82,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "9A59C3F0257834EE0053E989"
-            BuildableName = "ADNCeiba.app"
-            BlueprintName = "ADNCeiba"
-            ReferencedContainer = "container:ADNCeiba.xcodeproj">
+            BuildableName = "Presentation.app"
+            BlueprintName = "Presentation"
+            ReferencedContainer = "container:Presentation.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>

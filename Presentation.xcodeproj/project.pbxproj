@@ -3,19 +3,43 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0D1E923C706A8C62027E4F90 /* Pods_ADNCeibaTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 108D2055E650429D5AF73B5B /* Pods_ADNCeibaTests.framework */; };
+		46BDF6587E73A7E609308779 /* Pods_ADNCeiba_ADNCeibaUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CF60DAE7B6574D8DC2EEE1F5 /* Pods_ADNCeiba_ADNCeibaUITests.framework */; };
 		9A59C3F5257834EE0053E989 /* ADNCeibaApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A59C3F4257834EE0053E989 /* ADNCeibaApp.swift */; };
 		9A59C3F7257834EE0053E989 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A59C3F6257834EE0053E989 /* ContentView.swift */; };
 		9A59C3F9257834F30053E989 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9A59C3F8257834F30053E989 /* Assets.xcassets */; };
 		9A59C3FC257834F30053E989 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9A59C3FB257834F30053E989 /* Preview Assets.xcassets */; };
 		9A59C407257834F40053E989 /* ADNCeibaTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A59C406257834F40053E989 /* ADNCeibaTests.swift */; };
 		9A59C412257834F40053E989 /* ADNCeibaUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A59C411257834F40053E989 /* ADNCeibaUITests.swift */; };
+		C002F5FCBD5D2C622ABABA5D /* Pods_ADNCeiba.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 40D65FB7F939FC32B027F4EE /* Pods_ADNCeiba.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		9A1FC0332582EBFA0022697C /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 9A1FC02A2582EBF80022697C /* Domain.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 9A1FBFF72582EBF30022697C;
+			remoteInfo = Domain;
+		};
+		9A1FC0352582EBFA0022697C /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 9A1FC02A2582EBF80022697C /* Domain.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 9A1FC00D2582EBF80022697C;
+			remoteInfo = DomainTests;
+		};
+		9A1FC0372582EBFA0022697C /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 9A1FC02A2582EBF80022697C /* Domain.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 9A1FC0182582EBF80022697C;
+			remoteInfo = DomainUITests;
+		};
 		9A59C403257834F40053E989 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 9A59C3E9257834EE0053E989 /* Project object */;
@@ -33,18 +57,28 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		9A59C3F1257834EE0053E989 /* ADNCeiba.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ADNCeiba.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		01D5EE94E9AC541ECFD2467A /* Pods-ADNCeibaTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ADNCeibaTests.release.xcconfig"; path = "Target Support Files/Pods-ADNCeibaTests/Pods-ADNCeibaTests.release.xcconfig"; sourceTree = "<group>"; };
+		108D2055E650429D5AF73B5B /* Pods_ADNCeibaTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ADNCeibaTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		216419493168111A39BA1FFD /* Pods-ADNCeiba.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ADNCeiba.debug.xcconfig"; path = "Target Support Files/Pods-ADNCeiba/Pods-ADNCeiba.debug.xcconfig"; sourceTree = "<group>"; };
+		3543C84BA151A36F2E69FEC6 /* Pods-ADNCeiba-ADNCeibaUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ADNCeiba-ADNCeibaUITests.release.xcconfig"; path = "Target Support Files/Pods-ADNCeiba-ADNCeibaUITests/Pods-ADNCeiba-ADNCeibaUITests.release.xcconfig"; sourceTree = "<group>"; };
+		40D65FB7F939FC32B027F4EE /* Pods_ADNCeiba.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ADNCeiba.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		723C5B88E400D6E9AD6DC172 /* Pods-ADNCeibaTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ADNCeibaTests.debug.xcconfig"; path = "Target Support Files/Pods-ADNCeibaTests/Pods-ADNCeibaTests.debug.xcconfig"; sourceTree = "<group>"; };
+		91738DB5AF7E59532731F36C /* Pods-ADNCeiba.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ADNCeiba.release.xcconfig"; path = "Target Support Files/Pods-ADNCeiba/Pods-ADNCeiba.release.xcconfig"; sourceTree = "<group>"; };
+		9A1FC02A2582EBF80022697C /* Domain.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Domain.xcodeproj; path = Domain/Domain.xcodeproj; sourceTree = "<group>"; };
+		9A59C3F1257834EE0053E989 /* Presentation.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Presentation.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9A59C3F4257834EE0053E989 /* ADNCeibaApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ADNCeibaApp.swift; sourceTree = "<group>"; };
 		9A59C3F6257834EE0053E989 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		9A59C3F8257834F30053E989 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		9A59C3FB257834F30053E989 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		9A59C3FD257834F30053E989 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		9A59C402257834F40053E989 /* ADNCeibaTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ADNCeibaTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		9A59C402257834F40053E989 /* PresentationTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PresentationTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		9A59C406257834F40053E989 /* ADNCeibaTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ADNCeibaTests.swift; sourceTree = "<group>"; };
 		9A59C408257834F40053E989 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		9A59C40D257834F40053E989 /* ADNCeibaUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ADNCeibaUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		9A59C40D257834F40053E989 /* PresentationUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PresentationUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		9A59C411257834F40053E989 /* ADNCeibaUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ADNCeibaUITests.swift; sourceTree = "<group>"; };
 		9A59C413257834F40053E989 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A5980757871A402C7CDB5E65 /* Pods-ADNCeiba-ADNCeibaUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ADNCeiba-ADNCeibaUITests.debug.xcconfig"; path = "Target Support Files/Pods-ADNCeiba-ADNCeibaUITests/Pods-ADNCeiba-ADNCeibaUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		CF60DAE7B6574D8DC2EEE1F5 /* Pods_ADNCeiba_ADNCeibaUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ADNCeiba_ADNCeibaUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -52,6 +86,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C002F5FCBD5D2C622ABABA5D /* Pods_ADNCeiba.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -59,6 +94,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0D1E923C706A8C62027E4F90 /* Pods_ADNCeibaTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -66,28 +102,65 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				46BDF6587E73A7E609308779 /* Pods_ADNCeiba_ADNCeibaUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		06F4F0A9C67FCCFEF43B56FC /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				216419493168111A39BA1FFD /* Pods-ADNCeiba.debug.xcconfig */,
+				91738DB5AF7E59532731F36C /* Pods-ADNCeiba.release.xcconfig */,
+				A5980757871A402C7CDB5E65 /* Pods-ADNCeiba-ADNCeibaUITests.debug.xcconfig */,
+				3543C84BA151A36F2E69FEC6 /* Pods-ADNCeiba-ADNCeibaUITests.release.xcconfig */,
+				723C5B88E400D6E9AD6DC172 /* Pods-ADNCeibaTests.debug.xcconfig */,
+				01D5EE94E9AC541ECFD2467A /* Pods-ADNCeibaTests.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		3699BD0AA4C99CDA877652F0 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				40D65FB7F939FC32B027F4EE /* Pods_ADNCeiba.framework */,
+				CF60DAE7B6574D8DC2EEE1F5 /* Pods_ADNCeiba_ADNCeibaUITests.framework */,
+				108D2055E650429D5AF73B5B /* Pods_ADNCeibaTests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		9A1FC02B2582EBF80022697C /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				9A1FC0342582EBFA0022697C /* Domain.app */,
+				9A1FC0362582EBFA0022697C /* DomainTests.xctest */,
+				9A1FC0382582EBFA0022697C /* DomainUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
 		9A59C3E8257834EE0053E989 = {
 			isa = PBXGroup;
 			children = (
+				9A1FC02A2582EBF80022697C /* Domain.xcodeproj */,
 				9A59C3F3257834EE0053E989 /* ADNCeiba */,
 				9A59C405257834F40053E989 /* ADNCeibaTests */,
 				9A59C410257834F40053E989 /* ADNCeibaUITests */,
 				9A59C3F2257834EE0053E989 /* Products */,
+				06F4F0A9C67FCCFEF43B56FC /* Pods */,
+				3699BD0AA4C99CDA877652F0 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
 		9A59C3F2257834EE0053E989 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				9A59C3F1257834EE0053E989 /* ADNCeiba.app */,
-				9A59C402257834F40053E989 /* ADNCeibaTests.xctest */,
-				9A59C40D257834F40053E989 /* ADNCeibaUITests.xctest */,
+				9A59C3F1257834EE0053E989 /* Presentation.app */,
+				9A59C402257834F40053E989 /* PresentationTests.xctest */,
+				9A59C40D257834F40053E989 /* PresentationUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -133,27 +206,30 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		9A59C3F0257834EE0053E989 /* ADNCeiba */ = {
+		9A59C3F0257834EE0053E989 /* Presentation */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 9A59C416257834F40053E989 /* Build configuration list for PBXNativeTarget "ADNCeiba" */;
+			buildConfigurationList = 9A59C416257834F40053E989 /* Build configuration list for PBXNativeTarget "Presentation" */;
 			buildPhases = (
+				ED3A1B0C460BD9C6D33E7B14 /* [CP] Check Pods Manifest.lock */,
 				9A59C3ED257834EE0053E989 /* Sources */,
 				9A59C3EE257834EE0053E989 /* Frameworks */,
 				9A59C3EF257834EE0053E989 /* Resources */,
+				195735CC28D5CB2948276984 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
-			name = ADNCeiba;
+			name = Presentation;
 			productName = ADNCeiba;
-			productReference = 9A59C3F1257834EE0053E989 /* ADNCeiba.app */;
+			productReference = 9A59C3F1257834EE0053E989 /* Presentation.app */;
 			productType = "com.apple.product-type.application";
 		};
-		9A59C401257834F40053E989 /* ADNCeibaTests */ = {
+		9A59C401257834F40053E989 /* PresentationTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 9A59C419257834F40053E989 /* Build configuration list for PBXNativeTarget "ADNCeibaTests" */;
+			buildConfigurationList = 9A59C419257834F40053E989 /* Build configuration list for PBXNativeTarget "PresentationTests" */;
 			buildPhases = (
+				729934F2F6383A672894CDBC /* [CP] Check Pods Manifest.lock */,
 				9A59C3FE257834F40053E989 /* Sources */,
 				9A59C3FF257834F40053E989 /* Frameworks */,
 				9A59C400257834F40053E989 /* Resources */,
@@ -163,27 +239,29 @@
 			dependencies = (
 				9A59C404257834F40053E989 /* PBXTargetDependency */,
 			);
-			name = ADNCeibaTests;
+			name = PresentationTests;
 			productName = ADNCeibaTests;
-			productReference = 9A59C402257834F40053E989 /* ADNCeibaTests.xctest */;
+			productReference = 9A59C402257834F40053E989 /* PresentationTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
-		9A59C40C257834F40053E989 /* ADNCeibaUITests */ = {
+		9A59C40C257834F40053E989 /* PresentationUITests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 9A59C41C257834F40053E989 /* Build configuration list for PBXNativeTarget "ADNCeibaUITests" */;
+			buildConfigurationList = 9A59C41C257834F40053E989 /* Build configuration list for PBXNativeTarget "PresentationUITests" */;
 			buildPhases = (
+				7E820E1D59EF7406D8FFFC46 /* [CP] Check Pods Manifest.lock */,
 				9A59C409257834F40053E989 /* Sources */,
 				9A59C40A257834F40053E989 /* Frameworks */,
 				9A59C40B257834F40053E989 /* Resources */,
+				FA06C9B45E5544B0B5A7AEC6 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 				9A59C40F257834F40053E989 /* PBXTargetDependency */,
 			);
-			name = ADNCeibaUITests;
+			name = PresentationUITests;
 			productName = ADNCeibaUITests;
-			productReference = 9A59C40D257834F40053E989 /* ADNCeibaUITests.xctest */;
+			productReference = 9A59C40D257834F40053E989 /* PresentationUITests.xctest */;
 			productType = "com.apple.product-type.bundle.ui-testing";
 		};
 /* End PBXNativeTarget section */
@@ -208,7 +286,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 9A59C3EC257834EE0053E989 /* Build configuration list for PBXProject "ADNCeiba" */;
+			buildConfigurationList = 9A59C3EC257834EE0053E989 /* Build configuration list for PBXProject "Presentation" */;
 			compatibilityVersion = "Xcode 9.3";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -219,14 +297,44 @@
 			mainGroup = 9A59C3E8257834EE0053E989;
 			productRefGroup = 9A59C3F2257834EE0053E989 /* Products */;
 			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = 9A1FC02B2582EBF80022697C /* Products */;
+					ProjectRef = 9A1FC02A2582EBF80022697C /* Domain.xcodeproj */;
+				},
+			);
 			projectRoot = "";
 			targets = (
-				9A59C3F0257834EE0053E989 /* ADNCeiba */,
-				9A59C401257834F40053E989 /* ADNCeibaTests */,
-				9A59C40C257834F40053E989 /* ADNCeibaUITests */,
+				9A59C3F0257834EE0053E989 /* Presentation */,
+				9A59C401257834F40053E989 /* PresentationTests */,
+				9A59C40C257834F40053E989 /* PresentationUITests */,
 			);
 		};
 /* End PBXProject section */
+
+/* Begin PBXReferenceProxy section */
+		9A1FC0342582EBFA0022697C /* Domain.app */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.application;
+			path = Domain.app;
+			remoteRef = 9A1FC0332582EBFA0022697C /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		9A1FC0362582EBFA0022697C /* DomainTests.xctest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = DomainTests.xctest;
+			remoteRef = 9A1FC0352582EBFA0022697C /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		9A1FC0382582EBFA0022697C /* DomainUITests.xctest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = DomainUITests.xctest;
+			remoteRef = 9A1FC0372582EBFA0022697C /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+/* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
 		9A59C3EF257834EE0053E989 /* Resources */ = {
@@ -253,6 +361,109 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		195735CC28D5CB2948276984 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-ADNCeiba/Pods-ADNCeiba-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-ADNCeiba/Pods-ADNCeiba-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-ADNCeiba/Pods-ADNCeiba-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		729934F2F6383A672894CDBC /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-ADNCeibaTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		7E820E1D59EF7406D8FFFC46 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-ADNCeiba-ADNCeibaUITests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		ED3A1B0C460BD9C6D33E7B14 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-ADNCeiba-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		FA06C9B45E5544B0B5A7AEC6 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-ADNCeiba-ADNCeibaUITests/Pods-ADNCeiba-ADNCeibaUITests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-ADNCeiba-ADNCeibaUITests/Pods-ADNCeiba-ADNCeibaUITests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-ADNCeiba-ADNCeibaUITests/Pods-ADNCeiba-ADNCeibaUITests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		9A59C3ED257834EE0053E989 /* Sources */ = {
@@ -285,12 +496,12 @@
 /* Begin PBXTargetDependency section */
 		9A59C404257834F40053E989 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 9A59C3F0257834EE0053E989 /* ADNCeiba */;
+			target = 9A59C3F0257834EE0053E989 /* Presentation */;
 			targetProxy = 9A59C403257834F40053E989 /* PBXContainerItemProxy */;
 		};
 		9A59C40F257834F40053E989 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 9A59C3F0257834EE0053E989 /* ADNCeiba */;
+			target = 9A59C3F0257834EE0053E989 /* Presentation */;
 			targetProxy = 9A59C40E257834F40053E989 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -414,6 +625,7 @@
 		};
 		9A59C417257834F40053E989 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 216419493168111A39BA1FFD /* Pods-ADNCeiba.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -430,12 +642,13 @@
 				PRODUCT_BUNDLE_IDENTIFIER = MattDevs.ADNCeiba;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
 		9A59C418257834F40053E989 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 91738DB5AF7E59532731F36C /* Pods-ADNCeiba.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -452,12 +665,13 @@
 				PRODUCT_BUNDLE_IDENTIFIER = MattDevs.ADNCeiba;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
 		9A59C41A257834F40053E989 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 723C5B88E400D6E9AD6DC172 /* Pods-ADNCeibaTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -474,12 +688,13 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/ADNCeiba.app/ADNCeiba";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Presentation.app/Presentation";
 			};
 			name = Debug;
 		};
 		9A59C41B257834F40053E989 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 01D5EE94E9AC541ECFD2467A /* Pods-ADNCeibaTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -496,12 +711,13 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/ADNCeiba.app/ADNCeiba";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Presentation.app/Presentation";
 			};
 			name = Release;
 		};
 		9A59C41D257834F40053E989 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = A5980757871A402C7CDB5E65 /* Pods-ADNCeiba-ADNCeibaUITests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -522,6 +738,7 @@
 		};
 		9A59C41E257834F40053E989 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3543C84BA151A36F2E69FEC6 /* Pods-ADNCeiba-ADNCeibaUITests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -543,7 +760,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		9A59C3EC257834EE0053E989 /* Build configuration list for PBXProject "ADNCeiba" */ = {
+		9A59C3EC257834EE0053E989 /* Build configuration list for PBXProject "Presentation" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				9A59C414257834F40053E989 /* Debug */,
@@ -552,7 +769,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		9A59C416257834F40053E989 /* Build configuration list for PBXNativeTarget "ADNCeiba" */ = {
+		9A59C416257834F40053E989 /* Build configuration list for PBXNativeTarget "Presentation" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				9A59C417257834F40053E989 /* Debug */,
@@ -561,7 +778,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		9A59C419257834F40053E989 /* Build configuration list for PBXNativeTarget "ADNCeibaTests" */ = {
+		9A59C419257834F40053E989 /* Build configuration list for PBXNativeTarget "PresentationTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				9A59C41A257834F40053E989 /* Debug */,
@@ -570,7 +787,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		9A59C41C257834F40053E989 /* Build configuration list for PBXNativeTarget "ADNCeibaUITests" */ = {
+		9A59C41C257834F40053E989 /* Build configuration list for PBXNativeTarget "PresentationUITests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				9A59C41D257834F40053E989 /* Debug */,

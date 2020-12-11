@@ -18,9 +18,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "9A59C40C257834F40053E989"
-               BuildableName = "ADNCeibaUITests.xctest"
-               BlueprintName = "ADNCeibaUITests"
-               ReferencedContainer = "container:ADNCeiba.xcodeproj">
+               BuildableName = "PresentationUITests.xctest"
+               BlueprintName = "PresentationUITests"
+               ReferencedContainer = "container:Presentation.xcodeproj">
             </BuildableReference>
          </TestableReference>
       </Testables>

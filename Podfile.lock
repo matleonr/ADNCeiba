@@ -1,0 +1,22 @@
+PODS:
+  - SQLite.swift (0.12.2):
+    - SQLite.swift/standard (= 0.12.2)
+  - SQLite.swift/standard (0.12.2)
+  - Swinject (2.7.1)
+
+DEPENDENCIES:
+  - SQLite.swift
+  - Swinject
+
+SPEC REPOS:
+  trunk:
+    - SQLite.swift
+    - Swinject
+
+SPEC CHECKSUMS:
+  SQLite.swift: d2b4642190917051ce6bd1d49aab565fe794eea3
+  Swinject: ddf78b8486dd9b71a667b852cad919ab4484478e
+
+PODFILE CHECKSUM: e6a72d86c02ca1bd73244ad1a8be1e3a09afc13d
+
+COCOAPODS: 1.10.0

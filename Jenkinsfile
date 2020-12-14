@@ -33,13 +33,15 @@ pipeline {
     stage('Build') {
       steps {
         echo "------------>Build<------------"
+	sh 'xcodebuild clean build CODE_SIGN_IDENTITY="" CODE_SIGNING_REQUIRED=NO CODE_SIGN_ENTITLEMENTS="" CODE_SIGNING_ALLOWED="NO"'
+	xcodeName: 'Xcode_Mac', xcodeWorkspaceFile: 'ADNCeiba.xcworkspace', xcodeProjectPath: '', xcodeSchema: 'PresentationTests'"
       }
     }  
     
     stage('Unit Tests') {
       steps{
         echo "------------>Unit Tests<------------"
-
+	sh "${tool name: 'SonarScanner', type:'hudson.plugins.sonar.SonarRunnerInstallation'}/bin/sonar-scanner -Dproject.settings=sonar-project.properties"
       }
     }
 
@@ -76,3 +78,68 @@ pipeline {
     }
   }
 }
+
+
+
+pipeline {
+//Donde se va a ejecutar el Pipeline
+agent {
+label 'Slave_Mac'
+}
+//Opciones específicas de Pipeline dentro del Pipeline
+// options {
+// buildDiscarder(logRotator(numToKeepStr: '3'))
+// disableConcurrentBuilds()
+// }
+//Una sección que define las herramientas “preinstaladas” en Jenkins
+// tools {
+// jdk 'JDK8_Centos' //Preinstalada en la Configuración del Master
+// gradle 'Gradle4.5_Centos' //Preinstalada en la Configuración del Master
+// }
+//Aquí comienzan los “items” del Pipeline
+stages{
+stage('Checkout') {
+steps{
+echo "------------>Checkout<------------"
+checkout([
+$class: 'GitSCM',
+branches: [[name: 'master']],
+doGenerateSubmoduleConfigurations: false,
+extensions: [],
+submoduleCfg: [],
+userRemoteConfigs: [[
+credentialsId: 'GitHub_nestormoya',
+url: 'https://github.com/nestormoya/estacionamiento.git'
+]]
+])
+}
+}
+stage('Compile & Unit Tests') {
+steps{
+echo "------------>Unit Tests<------------"
+}
+}
+stage('Static Code Analysis') {
+steps{
+echo '------------>Análisis de código estático<------------'
+withSonarQubeEnv('Sonar') {
+sh "${tool name: 'SonarScanner', type:'hudson.plugins.sonar.SonarRunnerInstallation'}/bin/sonar-scanner -Dproject.settings=sonar-project.properties"
+}
+}
+}
+stage('Build') {
+steps {
+echo "------------>Build<------------"
+// sh 'xcodebuild -scheme estacionamiento build'
+sh 'xcodebuild clean build CODE_SIGN_IDENTITY="" CODE_SIGNING_REQUIRED=NO CODE_SIGN_ENTITLEMENTS="" CODE_SIGNING_ALLOWED="NO"'
+// sh 'xcodebuild -scheme "estacionamiento" -configuration "Debug" build test -destination "platform:iOS Simulator, OS:latest, name:iPhone 8"'
+// sh "xcodeBuild allowFailingBuildResults: true, cleanResultBundlePath: false, configuration: 'Release', ipaExportMethod: 'ad-hoc', keychainPwd: <object of type hudson.util.Secret>, xcodeName: 'Xcode_Mac', xcodeProjectFile: 'estacionamiento.xcodeproj', xcodeProjectPath: '', xcodeSchema: 'estacionamiento'"
+}
+}
+}
+post {
+always {
+echo 'This will always run'
+}
+success {
+echo 'This will run only if successful'

@@ -11,17 +11,19 @@ public protocol VehicleRepository {
     
     func getVehiclesBy(vehicleType: String) -> [Vehicle]
     
-    func create(vehicle: Vehicle)
+    func isThereCapacityByType(vehicleType: String) -> Bool
     
-    func getTotalPrice(plate: String)
+    func create(vehicle: Vehicle) -> Bool
+    
+    func getTotalPrice(plate: String) -> Int
     
     func getVehicles() -> [Vehicle]
     
     func getVehicle(vehicleplate: String) -> Vehicle?
     
-    func getCars() -> Vehicle?
+    func getCars() -> [Vehicle]?
     
-    func getBykes() -> Vehicle?
+    func getBykes() -> [Vehicle]?
     
     func delete(vehiclePlate: String)
     

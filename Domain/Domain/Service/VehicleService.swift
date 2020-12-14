@@ -9,22 +9,43 @@ import Foundation
 
 public class VehicleService {
     private let vehicleRepository: VehicleRepository
+    private let date = Date()
+    private let formatter = DateFormatter()
 
     public init(vehicleRepository: VehicleRepository) {
         self.vehicleRepository = vehicleRepository
     }
 
-    public func getTotalprice() {
+    public func getTotalprice(plate:String) -> Int {
+        var price: Int
+        let vehicle = vehicleRepository.getVehicle(vehicleplate: plate)
+        let days = getDay() - (vehicle?.getDayIn())!
+        let hours = getHour() - (vehicle?.getHourIn())!
+        let priceHour = hours * (vehicle?.getPriceByHour())!
+        let priceDay = days * (vehicle?.getPriceByDay())!
+        price = priceHour + priceDay
+        if vehicle!.cylinderCapacityOver500(){
+            price = price + 2000
+        }
+        return price
     }
 
-    public func saveVehicle(vehicle: Vehicle) {
-        
-        if vehicleRepository.vehicleAlreadyExists(vehiclePlate: vehicle.getPlate()) {
-            print("vehicle alreadyexists")
-        }else {
-            vehicleRepository.create(vehicle: vehicle)
+    public func saveVehicle(vehicle: Vehicle) -> Bool {
+        if vehicle.validateAuthorizationByPlate() {
+            if vehicleRepository.vehicleAlreadyExists(vehiclePlate: vehicle.getPlate()) {
+                print("vehicle already exists")
+                return false
+            }else {
+                if vehicleRepository.isThereCapacityByType(vehicleType: vehicle.getType()) {
+                    print("vehicle saved")
+                    return vehicleRepository.create(vehicle: vehicle)
+                }else{
+                    return false
+                }
+            }
         }
-    
+        print("vehicle not authorized to in")
+        return false
     }
     
     public func getVehicles() -> [Vehicle] {
@@ -33,6 +54,21 @@ public class VehicleService {
     
     public func deleteVehicle(plate: String) {
         return vehicleRepository.delete(vehiclePlate: plate)
+    }
+    
+    private func getDay() -> Int {
+        var day:Int = 0
+        formatter.dateFormat = "d"
+        day = Int(formatter.string(from: date))!
+        formatter.dateFormat = "MM"
+        day = day + Int(formatter.string(from: date))!
+        return day
+        
+    }
+    
+    private func getHour() -> Int {
+        formatter.dateFormat = "HH"
+        return Int(formatter.string(from: date))!
     }
 
 

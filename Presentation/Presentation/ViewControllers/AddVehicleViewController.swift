@@ -20,9 +20,12 @@ class AddVehicleViewController: UIViewController {
         saveVehicle()
         
     }
+    private let date = Date()
+    private let formatter = DateFormatter()
     private var vehicleService: VehicleService?
     
     override func viewDidLoad() {
+        
         let appDelegate = UIApplication.shared.delegate as! AppDelegate
         vehicleService = appDelegate.diContainer.getContainer().resolve(VehicleService.self)!
         
@@ -30,19 +33,37 @@ class AddVehicleViewController: UIViewController {
     }
     
     func setUI() {
+        
         vehicleTypeSegmentedController.addTarget(self, action: #selector(changeTableView), for: .valueChanged)
+        dayTextField.text = getDateString()
+        timeTextField.text = getHourString()
         
     }
     
+    private func getDateString()->String{
+        formatter.dateFormat = "EEEE, d MMM"
+        return formatter.string(from: date)
+    }
+    
+    private func getHourString()-> String {
+        formatter.dateFormat = "HH:mm"
+        return formatter.string(from: date)
+    }
+    
+    
     func getDay() -> Int {
-        let date = Date()
-        let formatter = DateFormatter()
-        formatter.dateFormat = "yyyy-MM-dd"
-        let today = formatter.string(from: date)
-        let todayDate = formatter.date(from: today)
-        formatter.dateFormat = "e" // "eeee" -> Friday
-        let weekDay = formatter.string(from: todayDate!)
-        return Int(weekDay)!
+        var day:Int = 0
+        formatter.dateFormat = "d"
+        day = Int(formatter.string(from: date))!
+        formatter.dateFormat = "MM"
+        day = day + Int(formatter.string(from: date))!
+        return day
+        
+    }
+    
+    func getHour() -> Int {
+        formatter.dateFormat = "HH"
+        return Int(formatter.string(from: date))!
     }
     
     func getNameOfTheDay(day: Int) -> String {
@@ -59,8 +80,8 @@ class AddVehicleViewController: UIViewController {
     func saveVehicle() {
         
         
-        let vehicle : Vehicle = try Vehicle(day: getDay(), hour: 2, plate: "ABC-123", type: "car")
-        vehicle.setCylinderCapacity(cylinderCapacity: 3000)
+        let vehicle : Vehicle = try Vehicle(day: getDay(), hour: getHour(), plate: "ABC-123", type: "car", cylinderCapacity: 3000)
+
         
         
 //        let authUser: AuthUser = try AuthUser(userId: "User01", password: "123", roles: roles)

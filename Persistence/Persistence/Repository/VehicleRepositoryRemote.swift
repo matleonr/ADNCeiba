@@ -10,17 +10,36 @@ import Domain
 
 public class VehicleRepositoryRemote: VehicleRepository {
     
+    public func isThereCapacityByType(vehicleType: String) -> Bool {
+        if vehicleType == "car" {
+            if getCars()?.count ?? 0 >= 20 {
+                return false
+            }
+            return true
+        }
+        if getBykes()?.count ?? 0 >= 10 {
+            return false
+        }
+        
+        return true
+    }
+    
+    
+    
     public func getVehiclesBy(vehicleType: String) -> [Vehicle] {
         let vehicles = [Vehicle]()
         return vehicles
     }
     
-    public func create(vehicle: Vehicle) {
-        
+    public func create(vehicle: Vehicle) -> Bool {
+        if isThereCapacityByType(vehicleType: vehicle.getType()) {
+            return true
+        }
+        return false
     }
     
-    public func getTotalPrice(plate: String) {
-        
+    public func getTotalPrice(plate: String) -> Int {
+        return 30000
     }
     
     public func getVehicles() -> [Vehicle] {
@@ -29,18 +48,18 @@ public class VehicleRepositoryRemote: VehicleRepository {
     }
     
     public func getVehicle(vehicleplate: String) -> Vehicle? {
-        let vehicle = Vehicle(day: 1, hour: 2, plate: "ABC-123", type: "car")
+        let vehicle = Vehicle(day: 1, hour: 2, plate: "ABC-123", type: "car", cylinderCapacity: 3000)
         return vehicle
     }
     
-    public func getCars() -> Vehicle? {
-        let vehicle = Vehicle(day: 1, hour: 2, plate: "ABC-123", type: "car")
-        return vehicle
+    public func getCars() -> [Vehicle]? {
+        let vehicles = [Vehicle]()
+        return vehicles
     }
     
-    public func getBykes() -> Vehicle? {
-        let vehicle = Vehicle(day: 1, hour: 2, plate: "DEF-456", type: "byke")
-        return vehicle
+    public func getBykes() -> [Vehicle]? {
+        let vehicles = [Vehicle]()
+        return vehicles
     }
     
     public func delete(vehiclePlate: String) {

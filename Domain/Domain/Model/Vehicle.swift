@@ -14,13 +14,14 @@ public class Vehicle {
     private var hourIn: Int
     private var dayIn: Int
     private var type: String
-    private var cylinderCapacity: Int?
+    private var cylinderCapacity: Int
 
-    public init(day: Int, hour: Int, plate: String, type: String) {
+    public init(day: Int, hour: Int, plate: String, type: String, cylinderCapacity: Int) {
         dayIn = day
         hourIn = hour
         self.plate = plate
         self.type = type
+        self.cylinderCapacity = cylinderCapacity
         setPrices(type: type)
         validateAuthorizationByPlate()
     }
@@ -57,12 +58,9 @@ public class Vehicle {
     }
     // MARK: CylinderCapacity
     public func getCylinderCapacity() -> Int {
-        return cylinderCapacity!
+        return cylinderCapacity
     }
 
-    public func setCylinderCapacity(cylinderCapacity: Int) {
-        self.cylinderCapacity = cylinderCapacity
-    }
     // MARK: Date in
     
     public func getDayIn() -> Int{
@@ -78,9 +76,16 @@ public class Vehicle {
         return self.type
     }
     
+    public func cylinderCapacityOver500()->Bool{
+        if self.cylinderCapacity > 500 && self.type == "byke" {
+            return true
+        }
+        return false
+    }
+    
    
     
-    private func validateAuthorizationByPlate() -> Bool{
+    public func validateAuthorizationByPlate() -> Bool{
         if self.plate.prefix(1) == "A" {
             if getDayOfWeek() == 1 || getDayOfWeek() == 2 {
                 return true

@@ -7,7 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		847EDC728ED318E5AC88A3C3 /* Pods_Persistence.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E1BC98A6C5C3344EC5622566 /* Pods_Persistence.framework */; };
+		7F6E64F7AA432AD32D6365CA /* Pods_Persistence.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E1BC98A6C5C3344EC5622566 /* Pods_Persistence.framework */; };
+		9A0D0DC42587346000D8CDD1 /* Pods_Persistence.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = E1BC98A6C5C3344EC5622566 /* Pods_Persistence.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		9AE7A190258401C500A2D8B4 /* Persistence.h in Headers */ = {isa = PBXBuildFile; fileRef = 9AE7A18E258401C500A2D8B4 /* Persistence.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		9AE7A199258401F500A2D8B4 /* Domain.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9AE7A198258401F500A2D8B4 /* Domain.framework */; };
 		9AE7A19A258401F500A2D8B4 /* Domain.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 9AE7A198258401F500A2D8B4 /* Domain.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
@@ -22,6 +23,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
+				9A0D0DC42587346000D8CDD1 /* Pods_Persistence.framework in Embed Frameworks */,
 				9AE7A19A258401F500A2D8B4 /* Domain.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
@@ -47,7 +49,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				9AE7A199258401F500A2D8B4 /* Domain.framework in Frameworks */,
-				847EDC728ED318E5AC88A3C3 /* Pods_Persistence.framework in Frameworks */,
+				7F6E64F7AA432AD32D6365CA /* Pods_Persistence.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

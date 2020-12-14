@@ -26,7 +26,7 @@ target 'Persistence' do
   
     xcodeproj 'Persistence/Persistence.xcodeproj'
     
-    pod 'SQLite.swift'
+    #pod 'SQLite.swift'
 end
 
 target 'Domain' do

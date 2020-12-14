@@ -81,7 +81,10 @@ public class Vehicle {
    
     
     private func validateAuthorizationByPlate() -> Bool{
-        if getDayOfWeek() == 4 {
+        if self.plate.prefix(1) == "A" {
+            if getDayOfWeek() == 1 || getDayOfWeek() == 2 {
+                return true
+            }
             return false
         }
         return true

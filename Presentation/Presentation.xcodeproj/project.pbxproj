@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 51;
+	objectVersion = 50;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -19,8 +19,6 @@
 		9AE7A1302583FCF000A2D8B4 /* PresentationUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AE7A12F2583FCF000A2D8B4 /* PresentationUITests.swift */; };
 		9AE7A19E2584077A00A2D8B4 /* Domain.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9AE7A19D2584077A00A2D8B4 /* Domain.framework */; };
 		9AE7A19F2584077A00A2D8B4 /* Domain.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 9AE7A19D2584077A00A2D8B4 /* Domain.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		9AE7A1C525841E1F00A2D8B4 /* Persistence.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9AE7A1C425841E1F00A2D8B4 /* Persistence.framework */; };
-		9AE7A1C625841E1F00A2D8B4 /* Persistence.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 9AE7A1C425841E1F00A2D8B4 /* Persistence.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		9AE7A1CE25842A4500A2D8B4 /* DIContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AE7A1CD25842A4500A2D8B4 /* DIContainer.swift */; };
 		9AE7A1E4258574A200A2D8B4 /* VehicleTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AE7A1E3258574A200A2D8B4 /* VehicleTableViewCell.swift */; };
 		9AE7A1E5258574A200A2D8B4 /* VehicleTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AE7A1E3258574A200A2D8B4 /* VehicleTableViewCell.swift */; };
@@ -53,7 +51,6 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				9AE7A1C625841E1F00A2D8B4 /* Persistence.framework in Embed Frameworks */,
 				9AE7A19F2584077A00A2D8B4 /* Domain.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
@@ -98,7 +95,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				9AE7A19E2584077A00A2D8B4 /* Domain.framework in Frameworks */,
-				9AE7A1C525841E1F00A2D8B4 /* Persistence.framework in Frameworks */,
 				DB51D100CDC18AFA7E26D800 /* libPods-Presentation.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -1,4 +1,4 @@
-framework module Pods_Presentation_PresentationUITests {
+module Pods_Presentation_PresentationUITests {
   umbrella header "Pods-Presentation-PresentationUITests-umbrella.h"
 
   export *

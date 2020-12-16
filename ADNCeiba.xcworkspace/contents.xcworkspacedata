@@ -5,9 +5,6 @@
       location = "group:Domain/Domain.xcodeproj">
    </FileRef>
    <FileRef
-      location = "group:Persistence/Persistence.xcodeproj">
-   </FileRef>
-   <FileRef
       location = "group:Presentation/Presentation.xcodeproj">
    </FileRef>
    <FileRef

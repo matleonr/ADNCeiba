@@ -33,6 +33,7 @@ pipeline {
     stage('Build') {
       steps {
         echo "------------>Build<------------"
+        sh 'launchctl remove com.apple.CoreSimulator.CoreSimulatorService || true'
 	      sh 'xcodebuild clean build CODE_SIGN_IDENTITY="" CODE_SIGNING_REQUIRED=NO CODE_SIGN_ENTITLEMENTS="" CODE_SIGNING_ALLOWED="NO"'
       }
     }  

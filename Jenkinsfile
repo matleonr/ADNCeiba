@@ -40,7 +40,7 @@ pipeline {
     stage('Unit Tests') {
       steps{
         echo "------------>Unit Tests<------------"
-        sh "xcodebuild -scheme "PresentationTest" -enableCodeCoverage YES -configuration Debug -destination 'name=iPhone 11' build-for-testing | tee build/xcodebuild-test.log | xcpretty"
+        sh 'xcodebuild -scheme "PresentationTest" -enableCodeCoverage YES -configuration Debug -destination "name=iPhone 11" build-for-testing | tee build/xcodebuild-test.log | xcpretty'
       }
     }
 

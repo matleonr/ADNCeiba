@@ -39,8 +39,7 @@ pipeline {
     
     stage('Unit Tests') {
       steps{
-        echo "--------- --------"
-        sh 'xcodebuild -scheme "Presentation" clean build CODE_SIGNING_REQUIRED=NO CODE_SIGNING_ALLOWED="NO"'
+        echo "------------>Unit Tests<------------"
         sh "xcodebuild -scheme "PresentationTest" -enableCodeCoverage YES -configuration Debug -destination 'name=iPhone 11' build-for-testing | tee build/xcodebuild-test.log | xcpretty"
       }
     }

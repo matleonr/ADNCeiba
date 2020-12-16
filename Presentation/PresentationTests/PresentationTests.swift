@@ -92,7 +92,7 @@ class PresentationTests: XCTestCase {
         let fakeRepository: VehicleRepository = fakeSuccessfullVehicleRepository()
         let domainService = VehicleService(vehicleRepository: fakeRepository)
 
-        let vehicle = Vehicle(day: 5, hour: 13, plate: "ABC-123", type: "car", cylinderCapacity: 2500)
+        let vehicle = Vehicle(day: 5, hour: 13, plate: "BBC-123", type: "car", cylinderCapacity: 2500)
 
         XCTAssertTrue(domainService.saveVehicle(vehicle: vehicle))
     }
@@ -102,6 +102,6 @@ class PresentationTests: XCTestCase {
         let domainService = VehicleService(vehicleRepository: fakeRepository)
         
         
-        XCTAssert(domainService.getTotalprice(plate: "ABC-123") == 31000)
+        XCTAssert(domainService.getTotalprice(plate: "ABC-123") == 47000)
     }
 }

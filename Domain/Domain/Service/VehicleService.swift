@@ -20,7 +20,7 @@ public class VehicleService {
         var price: Int
         let vehicle = vehicleRepository.getVehicle(vehicleplate: plate)
         let days = getDay() - (vehicle?.getDayIn())!
-        let hours = getHour() - (vehicle?.getHourIn())!
+        let hours = getHour() - (vehicle?.getHourIn())!//hours can go negative
         let priceHour = hours * (vehicle?.getPriceByHour())!
         let priceDay = days * (vehicle?.getPriceByDay())!
         price = priceHour + priceDay

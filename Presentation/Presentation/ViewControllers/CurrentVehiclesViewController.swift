@@ -20,7 +20,7 @@ class CurrentVehiclesViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         let appDelegate = UIApplication.shared.delegate as! AppDelegate
-//        vehicleService = appDelegate.diContainer.getContainer().resolve(VehicleService.self)!
+        vehicleService = appDelegate.diContainer.getContainer().resolve(VehicleService.self)!
         
         setUI()
     }

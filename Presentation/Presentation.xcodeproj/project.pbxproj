@@ -24,6 +24,8 @@
 		9AE7A1E5258574A200A2D8B4 /* VehicleTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AE7A1E3258574A200A2D8B4 /* VehicleTableViewCell.swift */; };
 		9AE7A1E6258574A200A2D8B4 /* VehicleTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AE7A1E3258574A200A2D8B4 /* VehicleTableViewCell.swift */; };
 		D1657ED1258AE310003EFC1D /* fakeSuccessfullVehicleRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1657ED0258AE310003EFC1D /* fakeSuccessfullVehicleRepository.swift */; };
+		D1F06CCB258B2F3B00D97F78 /* Persistence.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D1F06CCA258B2F3B00D97F78 /* Persistence.framework */; };
+		D1F06CCC258B2F3B00D97F78 /* Persistence.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = D1F06CCA258B2F3B00D97F78 /* Persistence.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		DB51D100CDC18AFA7E26D800 /* libPods-Presentation.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 127B3DFD9627593088C2F392 /* libPods-Presentation.a */; };
 		E7239183B6E0856877EA1B96 /* libPods-Presentation-PresentationUITests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 20E85E9419C26B65C6DF5717 /* libPods-Presentation-PresentationUITests.a */; };
 /* End PBXBuildFile section */
@@ -52,6 +54,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
+				D1F06CCC258B2F3B00D97F78 /* Persistence.framework in Embed Frameworks */,
 				9AE7A19F2584077A00A2D8B4 /* Domain.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
@@ -91,6 +94,8 @@
 		D1657E63258AB174003EFC1D /* Persistence.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Persistence.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D1657EA2258AB384003EFC1D /* Persistence.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Persistence.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D1657ED0258AE310003EFC1D /* fakeSuccessfullVehicleRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = fakeSuccessfullVehicleRepository.swift; sourceTree = "<group>"; };
+		D1657F25258AF76E003EFC1D /* Persistence.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Persistence.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		D1F06CCA258B2F3B00D97F78 /* Persistence.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Persistence.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -100,6 +105,7 @@
 			files = (
 				9AE7A19E2584077A00A2D8B4 /* Domain.framework in Frameworks */,
 				DB51D100CDC18AFA7E26D800 /* libPods-Presentation.a in Frameworks */,
+				D1F06CCB258B2F3B00D97F78 /* Persistence.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -177,6 +183,8 @@
 		9AE7A19C2584077A00A2D8B4 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				D1F06CCA258B2F3B00D97F78 /* Persistence.framework */,
+				D1657F25258AF76E003EFC1D /* Persistence.framework */,
 				D1657EA2258AB384003EFC1D /* Persistence.framework */,
 				D1657E63258AB174003EFC1D /* Persistence.framework */,
 				9AE7A1C425841E1F00A2D8B4 /* Persistence.framework */,

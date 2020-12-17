@@ -8,7 +8,7 @@
 
 import Swinject
 import Domain
-//import Persistence
+import Persistence
 
 public class DIContainer {
     
@@ -16,14 +16,14 @@ public class DIContainer {
     
     func registerDependencies() {
         
-//        container.register(VehicleRepository.self) {
-//            _ in VehicleRepositoryRemote()
-//        }
+        container.register(VehicleRepository.self) {
+            _ in VehicleRepositoryRemote()
+        }
         
-//        container.register(VehicleService.self) {
-//            repository in VehicleService(vehicleRepository: repository.resolve(VehicleRepository.self)!)
-//           
-//        }
+        container.register(VehicleService.self) {
+            repository in VehicleService(vehicleRepository: repository.resolve(VehicleRepository.self)!)
+           
+        }
     }
     
     func getContainer() -> Container {

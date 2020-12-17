@@ -6,7 +6,7 @@
 //
 
 import Domain
-//import Persistence
+import Persistence
 import UIKit
 
 class AddVehicleViewController: UIViewController {
@@ -25,7 +25,7 @@ class AddVehicleViewController: UIViewController {
 
     override func viewDidLoad() {
         let appDelegate = UIApplication.shared.delegate as! AppDelegate
-//        vehicleService = appDelegate.diContainer.getContainer().resolve(VehicleService.self)!
+        vehicleService = appDelegate.diContainer.getContainer().resolve(VehicleService.self)!
 
         setUI()
     }

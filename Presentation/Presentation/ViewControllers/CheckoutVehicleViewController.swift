@@ -18,7 +18,11 @@ class CheckoutVehicleViewController: UIViewController {
     @IBOutlet weak var timeOutLabel: UILabel!
     @IBOutlet weak var priceLabel: UILabel!
     @IBAction func checkoutButton(_ sender: Any) {
-        
+        if ((vehicleService?.deleteVehicle(plate: (vehicle?.getPlate())!)) != nil) {
+            _ = navigationController?.popViewController(animated: true)
+        }else{
+            print("no se pudo eliminar el vehiculo")
+        }
     }
     
     var vehicle : Vehicle?

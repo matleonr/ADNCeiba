@@ -19,10 +19,13 @@ public class VehicleService {
     public func getTotalprice(plate:String) -> Int {
         var price: Int
         let vehicle = vehicleRepository.getVehicleByPlate(vehicleplate: plate)
-        let days = getDay() - (vehicle?.getDayIn())!
+        var days = getDay() - (vehicle?.getDayIn())!
         var hours = 0
         if  !((getHour() - (vehicle?.getHourIn())!) < 0) {
             hours = getHour() - (vehicle?.getHourIn())!
+        }
+        if ((getHour() - (vehicle?.getHourIn())!) >= 9) {
+            days = days + 1
         }
         let priceHour = hours * (vehicle?.getPriceByHour())!
         let priceDay = days * (vehicle?.getPriceByDay())!
@@ -73,6 +76,5 @@ public class VehicleService {
         formatter.dateFormat = "HH"
         return Int(formatter.string(from: date))!
     }
-
 
 }

@@ -139,7 +139,7 @@
                                     <constraint firstAttribute="height" constant="1" id="AgD-Ci-Osm"/>
                                 </constraints>
                             </view>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="ABC-123" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ayj-bN-bSl">
+                            <textField opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="ABC-123" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ayj-bN-bSl">
                                 <rect key="frame" x="178" y="187.5" width="216" height="34"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
@@ -196,7 +196,7 @@
                                     <action selector="addVehicleButtonAction:" destination="rwu-n6-bf6" eventType="touchUpInside" id="xIT-kG-0Cq"/>
                                 </connections>
                             </button>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="250" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="acO-kN-x76">
+                            <textField opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="250" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="acO-kN-x76">
                                 <rect key="frame" x="178" y="321" width="216" height="34"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" keyboardType="numberPad"/>

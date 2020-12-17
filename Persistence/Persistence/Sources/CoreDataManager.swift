@@ -77,7 +77,7 @@ public class CoreDataManager {
         return vehiclesGetted
     }
     
-    func deleteVehicle(plate: String) -> Bool {
+    func deleteVehicleByPlate(plate: String) -> Bool {
         let context = persistentContainer.viewContext
         
         let fetchRequest = NSFetchRequest<VehicleEntity>(entityName: "VehicleEntity")
@@ -100,14 +100,17 @@ public class CoreDataManager {
     }
     
     public func fetchByPlate(plate: String) -> Vehicle{
+        
         let context = persistentContainer.viewContext
         let fetchRequest = NSFetchRequest<VehicleEntity>(entityName: "VehicleEntity")
         let predicate = NSPredicate(format: "plate CONTAINS %@", plate)
         fetchRequest.predicate = predicate
         let vehiclesGetted = try! context.fetch(fetchRequest)
         for VehvehicleGetted in vehiclesGetted {
+            
             let vehicle = Vehicle(day: Int(VehvehicleGetted.dayIn), hour: Int(VehvehicleGetted.hourIn), plate: VehvehicleGetted.plate!, type: VehvehicleGetted.type!, cylinderCapacity: Int(VehvehicleGetted.cylinderCapacity))
             return vehicle
+            
         }
         
         let vehicle = Vehicle(day: 0, hour: 0, plate: "", type: "", cylinderCapacity: 0)
@@ -115,4 +118,24 @@ public class CoreDataManager {
         return vehicle
         
     }
+    
+    public func getVehiclesByType(type:String) -> [Vehicle]{
+        
+        let context = persistentContainer.viewContext
+        let fetchRequest = NSFetchRequest<VehicleEntity>(entityName: "VehicleEntity")
+        let predicate = NSPredicate(format: "type CONTAINS %@",type)
+        fetchRequest.predicate = predicate
+        var vehicles = [Vehicle]()
+        let vehiclesGetted = try! context.fetch(fetchRequest)
+        for vehicleGetted in vehiclesGetted {
+            
+            let vehicle = Vehicle(day: Int(vehicleGetted.dayIn), hour: Int(vehicleGetted.hourIn), plate: vehicleGetted.plate!, type: vehicleGetted.type!, cylinderCapacity: Int(vehicleGetted.cylinderCapacity))
+            vehicles.append(vehicle)
+            
+        }
+        
+        return vehicles
+        
+    }
+
 }

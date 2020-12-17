@@ -105,4 +105,10 @@ class AddVehicleViewController: UIViewController {
             divider4.isHidden = false
         }
     }
+    
+    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
+        
+        return string.rangeOfCharacter(from: CharacterSet(charactersIn: "ABCDEFGHIJKLMNOPQRSTUVWXYZ-1234567890")) == nil
+        
+    }
 }

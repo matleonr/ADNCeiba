@@ -56,18 +56,18 @@ public class VehicleRepositoryRemote: VehicleRepository {
     }
 
     public func getCars() -> [Vehicle] {
-        let vehicles = [Vehicle]()
+        let vehicles = CoreDataManager.shared.getVehiclesByType(type: "car")
         return vehicles
     }
 
     public func getBykes() -> [Vehicle] {
-        let vehicles = [Vehicle]()
+        let vehicles = CoreDataManager.shared.getVehiclesByType(type: "byke")
         return vehicles
     }
 
     public func delete(vehiclePlate: String) -> Bool {
         if vehicleAlreadyExists(vehiclePlate: vehiclePlate) {
-            if CoreDataManager.shared.deleteVehicle(plate: vehiclePlate) {
+            if CoreDataManager.shared.deleteVehicleByPlate(plate: vehiclePlate) {
                 return true
             }
             return false
@@ -77,6 +77,9 @@ public class VehicleRepositoryRemote: VehicleRepository {
 
     public func vehicleAlreadyExists(vehiclePlate: String) -> Bool {
         let vehicle = CoreDataManager.shared.fetchByPlate(plate: vehiclePlate)
+        if !(vehicle.getPlate().isEmpty) {
+            return true
+        }
         return false
     }
 

@@ -22,14 +22,14 @@ target 'Presentation' do
 end
 
 
-#target 'Persistence' do
+target 'Persistence' do
   
-    #xcodeproj 'Persistence/Persistence.xcodeproj'
+    xcodeproj 'Persistence/Persistence.xcodeproj'
     
     #pod 'Realm',  :modular_headers => true
     #pod 'RealmSwift',  :modular_headers => true
     #pod 'SQLite.swift'
-#end
+end
 
 target 'Domain' do
   

@@ -18,9 +18,12 @@ public class VehicleService {
 
     public func getTotalprice(plate:String) -> Int {
         var price: Int
-        let vehicle = vehicleRepository.getVehicle(vehicleplate: plate)
+        let vehicle = vehicleRepository.getVehicleByPlate(vehicleplate: plate)
         let days = getDay() - (vehicle?.getDayIn())!
-        let hours = getHour() - (vehicle?.getHourIn())!//hours can go negative
+        var hours = 0
+        if  !((getHour() - (vehicle?.getHourIn())!) < 0) {
+            hours = getHour() - (vehicle?.getHourIn())!
+        }
         let priceHour = hours * (vehicle?.getPriceByHour())!
         let priceDay = days * (vehicle?.getPriceByDay())!
         price = priceHour + priceDay
@@ -38,7 +41,7 @@ public class VehicleService {
             }else {
                 if vehicleRepository.isThereCapacityByType(vehicleType: vehicle.getType()) {
                     print("vehicle saved")
-                    return vehicleRepository.create(vehicle: vehicle)
+                    return vehicleRepository.createVehicle(vehicle: vehicle)
                 }else{
                     return false
                 }
@@ -52,7 +55,7 @@ public class VehicleService {
         return vehicleRepository.getVehicles()
     }
     
-    public func deleteVehicle(plate: String) {
+    public func deleteVehicle(plate: String) -> Bool {
         return vehicleRepository.delete(vehiclePlate: plate)
     }
     

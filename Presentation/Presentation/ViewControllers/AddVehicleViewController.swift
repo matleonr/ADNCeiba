@@ -10,6 +10,7 @@ import Persistence
 import UIKit
 
 class AddVehicleViewController: UIViewController {
+    
     @IBOutlet var vehicleTypeSegmentedController: UISegmentedControl!
     @IBOutlet var plateTextField: UITextField!
     @IBOutlet var dayTextField: UITextField!
@@ -17,8 +18,9 @@ class AddVehicleViewController: UIViewController {
     @IBAction func addVehicleButtonAction(_ sender: Any) {
         saveVehicle()
     }
-
     @IBOutlet var cylinderCapacityTextField: UITextField!
+    @IBOutlet weak var cylinderCapacityLabel: UILabel!
+    @IBOutlet weak var divider4: UIView!
     private let date = Date()
     private let formatter = DateFormatter()
     private var vehicleService: VehicleService?
@@ -31,7 +33,7 @@ class AddVehicleViewController: UIViewController {
     }
 
     func setUI() {
-        vehicleTypeSegmentedController.addTarget(self, action: #selector(changeTableView), for: .valueChanged)
+        vehicleTypeSegmentedController.addTarget(self, action: #selector(changeForm), for: .valueChanged)
         dayTextField.text = getDateString()
         timeTextField.text = getHourString()
         let tap = UITapGestureRecognizer(target: self, action: #selector(UIInputViewController.dismissKeyboard))
@@ -67,24 +69,13 @@ class AddVehicleViewController: UIViewController {
         return Int(formatter.string(from: date))!
     }
 
-    func getNameOfTheDay(day: Int) -> String {
-        var nameOfTheDay: String = ""
-        switch day {
-        case 1:
-            nameOfTheDay = "monday"
-        default:
-            break
-        }
-        return nameOfTheDay
-    }
-
     func saveVehicle() {
-        let cylinderCapacity = Int(cylinderCapacityTextField.text ?? "0")!
 
-        let vehicle: Vehicle = try Vehicle(day: getDay(), hour: getHour(), plate: plateTextField.text!, type: getCarType(), cylinderCapacity: cylinderCapacity)
+        let vehicle: Vehicle = try Vehicle(day: getDay(), hour: getHour(), plate: plateTextField.text!, type: getCarType(), cylinderCapacity: setCylinderCapacity())
 
         vehicleService?.saveVehicle(vehicle: vehicle)
         print("Se ha guardado correctamente")
+        _ = navigationController?.popViewController(animated: true)
     }
 
     private func getCarType() -> String {
@@ -93,8 +84,25 @@ class AddVehicleViewController: UIViewController {
         }
         return "car"
     }
+    
+    func setCylinderCapacity() -> Int {
+        if cylinderCapacityTextField.text!.isEmpty  || getCarType() == "car"{
+            return 0
+        }else{
+            return Int(cylinderCapacityTextField.text ?? "0")!
+        }
+    }
 
-    @objc func changeTableView() {
+    @objc func changeForm() {
         let index = vehicleTypeSegmentedController.selectedSegmentIndex
+        if index == 1 {
+            cylinderCapacityLabel.isHidden = true
+            cylinderCapacityTextField.isHidden = true
+            divider4.isHidden = true
+        }else{
+            cylinderCapacityLabel.isHidden = false
+            cylinderCapacityTextField.isHidden = false
+            divider4.isHidden = false
+        }
     }
 }

@@ -8,12 +8,13 @@
 import Foundation
 import Domain
 
-class fakeSuccessfullVehicleRepository: VehicleRepository {
+class fakeSuccessfullVehicleRepository: VehicleRepository {    
+    
     func isThereCapacityByType(vehicleType: String) -> Bool {
         return true
     }
 
-    func getVehiclesBy(vehicleType: String) -> [Vehicle] {
+    func getVehiclesByType(vehicleType: String) -> [Vehicle] {
         var vehicles = [Vehicle]()
         let vehicle1 = Vehicle(day: 22, hour: 12, plate: "ABC-123", type: vehicleType, cylinderCapacity: 3000)
         let vehicle2 = Vehicle(day: 4, hour: 13, plate: "JWD-294", type: vehicleType, cylinderCapacity: 250)
@@ -27,7 +28,7 @@ class fakeSuccessfullVehicleRepository: VehicleRepository {
         return vehicles
     }
 
-    func create(vehicle: Vehicle) -> Bool {
+    func createVehicle(vehicle: Vehicle) -> Bool {
         if isThereCapacityByType(vehicleType: vehicle.getType()) {
             print("vehicle created")
             return true
@@ -53,26 +54,53 @@ class fakeSuccessfullVehicleRepository: VehicleRepository {
         return vehicles
     }
 
-    func getVehicle(vehicleplate: String) -> Vehicle? {
-        let vehicle = Vehicle(day: 22, hour: 12, plate: vehicleplate, type: "car", cylinderCapacity: 3000)
+    func getVehicleByPlate(vehicleplate: String) -> Vehicle? {
+        let vehicle = Vehicle(day: getDay()-1, hour: getHour()-3, plate: vehicleplate, type: "car", cylinderCapacity: 3000)
         return vehicle
     }
 
-    func getCars() -> [Vehicle]? {
+    func getCars() -> [Vehicle] {
         let vehicles = [Vehicle]()
         return vehicles
     }
 
-    func getBykes() -> [Vehicle]? {
+    func getBykes() -> [Vehicle] {
         let vehicles = [Vehicle]()
         return vehicles
     }
 
-    func delete(vehiclePlate: String) {
+    func delete(vehiclePlate: String) -> Bool{
+        if vehicleAlreadyExists(vehiclePlate: vehiclePlate) {
+            return true
+        }
+        return false
     }
 
     func vehicleAlreadyExists(vehiclePlate: String) -> Bool {
-        return false
+        if vehiclePlate == "BBC-123" {
+            return false
+        }else{
+            return true
+        }
+        
+    }
+    
+    func getDay() -> Int {
+        let date = Date()
+        let formatter = DateFormatter()
+        var day: Int = 0
+        formatter.dateFormat = "d"
+        day = Int(formatter.string(from: date))!
+        formatter.dateFormat = "MM"
+        day = day + Int(formatter.string(from: date))!
+        return day
+    }
+    
+    func getHour() -> Int {
+        let date = Date()
+        let formatter = DateFormatter()
+        formatter.dateFormat = "HH"
+        return Int(formatter.string(from: date))!
     }
 }
 

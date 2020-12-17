@@ -10,24 +10,27 @@ import Domain
 import XCTest
 
 class PresentationTests: XCTestCase {
-    func testGetVehiclesOK() {
+    
+    func test_GetAllVehiclesOK() {
         // arrange
         let fakeRepository: VehicleRepository = fakeSuccessfullVehicleRepository()
         let domainService = VehicleService(vehicleRepository: fakeRepository)
         let vehicleExpected = Vehicle(day: 2, hour: 12, plate: "ABC-123", type: "car", cylinderCapacity: 3000)
 
         // act
-
+        let plateExpected = vehicleExpected.getPlate()
+        let plateGetted = domainService.getVehicles().first?.getPlate()
         // assert
-        XCTAssert(vehicleExpected.getPlate() == domainService.getVehicles().first?.getPlate())
+        XCTAssert(plateExpected == plateGetted)
     }
 
     func test_SaveVehicle_CarTypeWithPlateStartinWithB_Success() {
         // arrange
         let fakeRepository: VehicleRepository = fakeSuccessfullVehicleRepository()
         let domainService = VehicleService(vehicleRepository: fakeRepository)
+        
 
-        let vehicle = Vehicle(day: 5, hour: 13, plate: "BBC-123", type: "car", cylinderCapacity: 2500)
+        let vehicle = Vehicle(day: getDay(), hour: getHour()-3, plate: "BBC-123", type: "car", cylinderCapacity: 2500)
 
         // act
         let result = domainService.saveVehicle(vehicle: vehicle)
@@ -36,10 +39,45 @@ class PresentationTests: XCTestCase {
         XCTAssertEqual(true, result)
     }
 
-    func testGetTotalPrice() {
+    func test_GetTotalPrice_3HourAnd1DayCar_returns11000() {
+        //arragne
         let fakeRepository: VehicleRepository = fakeSuccessfullVehicleRepository()
         let domainService = VehicleService(vehicleRepository: fakeRepository)
-
-        XCTAssert(domainService.getTotalprice(plate: "ABC-123") == 47000)
+        
+        //act
+        let price = domainService.getTotalprice(plate: "BBC-123")
+        let priceExpected = 11000
+        //assert
+        XCTAssertEqual(price, priceExpected)
+    }
+    
+    func test_DeleteCarWithPlateBAC123_Successful() {
+        //arrange
+        let fakeRepository: VehicleRepository = fakeSuccessfullVehicleRepository()
+        let domainService = VehicleService(vehicleRepository: fakeRepository)
+        
+        //act
+        let result = domainService.deleteVehicle(plate: "BAC-123")
+        
+        //Assert
+        XCTAssertEqual(true, result)
+    }
+    
+    func getDay() -> Int {
+        let date = Date()
+        let formatter = DateFormatter()
+        var day: Int = 0
+        formatter.dateFormat = "d"
+        day = Int(formatter.string(from: date))!
+        formatter.dateFormat = "MM"
+        day = day + Int(formatter.string(from: date))!
+        return day
+    }
+    
+    func getHour() -> Int {
+        let date = Date()
+        let formatter = DateFormatter()
+        formatter.dateFormat = "HH"
+        return Int(formatter.string(from: date))!
     }
 }

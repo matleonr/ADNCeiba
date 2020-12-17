@@ -10,7 +10,6 @@ import UIKit
 
 class VehicleTableViewCell: UITableViewCell {
     @IBOutlet var typeImage: UIImageView!
-    @IBOutlet var timeLabel: UILabel!
     @IBOutlet var plateLabel: UILabel!
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -18,7 +17,6 @@ class VehicleTableViewCell: UITableViewCell {
 
     func set(vehicle: Vehicle) {
         plateLabel.text = vehicle.getPlate()
-        timeLabel.text = "\(String(describing: vehicle.getDayIn()))d"
 
         setImageType(vehicleType: vehicle.getType())
     }

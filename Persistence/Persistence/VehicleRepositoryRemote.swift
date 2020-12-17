@@ -8,167 +8,83 @@
 import Domain
 
 public class VehicleRepositoryRemote: VehicleRepository {
-
-    public init() {
-        
-    }
     
+    public init() {
+    }
+
     public func isThereCapacityByType(vehicleType: String) -> Bool {
         if vehicleType == "car" {
-            if getCars()?.count ?? 0 >= 20 {
+            if getCars().count >= 20 {
                 return false
             }
             return true
         }
-        if getBykes()?.count ?? 0 >= 10 {
+        if getBykes().count >= 10 {
             return false
         }
-        
+
         return true
     }
-    
-    
-    
-    public func getVehiclesBy(vehicleType: String) -> [Vehicle] {
+
+    public func getVehiclesByType(vehicleType: String) -> [Vehicle] {
         let vehicles = [Vehicle]()
         return vehicles
     }
-    
-    public func create(vehicle: Vehicle) -> Bool {
+
+    public func createVehicle(vehicle: Vehicle) -> Bool {
         if isThereCapacityByType(vehicleType: vehicle.getType()) {
-            CoreDataManager.shared.createVehicle(plate: vehicle.getPlate(), dayIn: Int64(vehicle.getDayIn()), hourIn: Int64(vehicle.getHourIn()), cylinderCapacity: Int64(vehicle.getCylinderCapacity()))
-            
+            CoreDataManager.shared.createVehicle(plate: vehicle.getPlate(), dayIn: Int64(vehicle.getDayIn()), hourIn: Int64(vehicle.getHourIn()), cylinderCapacity: Int64(vehicle.getCylinderCapacity()), type: vehicle.getType())
 
             return true
         }
         return false
     }
-    
+
     public func getTotalPrice(plate: String) -> Int {
         return 30000
     }
-    
+
     public func getVehicles() -> [Vehicle] {
         var vehicles = [Vehicle]()
         vehicles = CoreDataManager.shared.fetch()
         return vehicles
     }
-    
-    public func getVehicle(vehicleplate: String) -> Vehicle? {
-        let vehicle = Vehicle(day: 1, hour: 2, plate: "ABC-123", type: "car", cylinderCapacity: 3000)
+
+    public func getVehicleByPlate(vehicleplate: String) -> Vehicle? {
+        let vehicle = CoreDataManager.shared.fetchByPlate(plate: vehicleplate)
         return vehicle
     }
-    
-    public func getCars() -> [Vehicle]? {
+
+    public func getCars() -> [Vehicle] {
         let vehicles = [Vehicle]()
         return vehicles
     }
-    
-    public func getBykes() -> [Vehicle]? {
+
+    public func getBykes() -> [Vehicle] {
         let vehicles = [Vehicle]()
         return vehicles
     }
-    
-    public func delete(vehiclePlate: String) {
-        
-    }
-    
-    public func vehicleAlreadyExists(vehiclePlate: String) -> Bool {
+
+    public func delete(vehiclePlate: String) -> Bool {
+        if vehicleAlreadyExists(vehiclePlate: vehiclePlate) {
+            if CoreDataManager.shared.deleteVehicle(plate: vehiclePlate) {
+                return true
+            }
+            return false
+        }
         return false
     }
-    
-//    var ParkingDB: Connection!
-//    var path: String = "parking.sqlite3"
-//    let Vehicles = Table("vehicles")
-//
-//    let id = Expression<Int>("id")
-//    let plate = Expression<String>("plate")
-//    let dayIn = Expression<Int>("dayin")
-//    let hourIn = Expression<Int>("hourIn")
-//    let type = Expression<String>("type")
-//    let hourPrice = Expression<Int>("hourprice")
-//    let dayPrice = Expression<Int>("dayprice")
-//    let cylinderCapacity = Expression<Int>("cylindercapacity")
-//
 
-//
-//    public func getTotalPrice(plate: String) {
-//    }
-//
-//    public func getVehiclesBy(vehicleType: String) -> [Vehicle] {
-//        var vehiclesArray = [Vehicle]()
-//        let vehiclesFromDb = Vehicles.filter(type == vehicleType)
-//
-//        do {
-//            let vehicles = try ParkingDB.prepare(vehiclesFromDb)
-//
-//            for vehicle in vehicles {
-//                let vehicleScoped = Vehicle(day: vehicle[dayIn], hour: vehicle[hourIn], plate: vehicle[plate], type: vehicle[type])
-//
-//                vehicleScoped.setCylinderCapacity(cylinderCapacity: vehicle[cylinderCapacity])
-//
-//                vehiclesArray.append(vehicleScoped)
-//            }
-//            return vehiclesArray
-//        } catch {
-//            print(error)
-//            return vehiclesArray
-//        }
-//    }
-//
-//    func createDatabase() -> Connection! {
-//        do {
-//            let filepath = try! FileManager.default.url(for: .documentDirectory, in: .userDomainMask, appropriateFor: nil, create: true).appendingPathExtension(path)
-//
-//            let db = try Connection(filepath.path)
-//            print("database created with path \(filepath.path)")
-//            return db
-//        } catch {
-//            print(error)
-//            return nil
-//        }
-//    }
-//
-//    func createTableVehicles() {
-//        let tableToCreate = Vehicles.create { table in
-//            table.column(id, primaryKey: true)
-//            table.column(plate)
-//            table.column(dayIn)
-//            table.column(hourIn)
-//            table.column(hourPrice)
-//            table.column(dayPrice)
-//            table.column(type)
-//            table.column(cylinderCapacity)
-//        }
-//
-//        do {
-//            try ParkingDB.run(tableToCreate)
-//            print("table created hellyeah")
-//        } catch {
-//            print(error)
-//        }
-//    }
-//
-//    public func vehicleAlreadyExists(vehiclePlate: String) -> Bool {
-//        var validate = false
-//        let vehicleFromDb = Vehicles.filter(plate == vehiclePlate)
-//        var vehiclesGetted = [Vehicle]()
-//        do {
-//            for vehicleGetted in try ParkingDB.prepare(vehicleFromDb) {
-//                let vehicle = Vehicle(day: vehicleGetted[dayIn], hour: vehicleGetted[hourIn], plate: vehicleGetted[plate], type: vehicleGetted[type])
-//                vehicle.setCylinderCapacity(cylinderCapacity: vehicleGetted[cylinderCapacity])
-//                vehiclesGetted.append(vehicle)
-//            }
-//
-//        } catch {
-//            print(error)
-//        }
-//
-//        if vehiclesGetted.count > 0 {
-//            validate = true
-//        }
-//        return validate
-//    }
+    public func vehicleAlreadyExists(vehiclePlate: String) -> Bool {
+        let vehicle = CoreDataManager.shared.fetchByPlate(plate: vehiclePlate)
+        return false
+    }
+
+
+
+
+
+ 
 //
 //    public func create(vehicle: Vehicle) {
 //        let vehicleToInsert = Vehicles.insert(plate <- vehicle.getPlate(), dayIn <- vehicle.getDayIn(), hourIn <- vehicle.getHourIn(), hourPrice <- vehicle.getPriceByHour()!, dayPrice <- vehicle.getPriceByDay()!, type <- vehicle.getType(), cylinderCapacity <- vehicle.getCylinderCapacity())
@@ -259,4 +175,3 @@ public class VehicleRepositoryRemote: VehicleRepository {
 //        }
 //    }
 }
-

@@ -9,23 +9,23 @@ import Foundation
 
 public protocol VehicleRepository {
     
-    func getVehiclesBy(vehicleType: String) -> [Vehicle]
+    func getVehiclesByType(vehicleType: String) -> [Vehicle]
     
     func isThereCapacityByType(vehicleType: String) -> Bool
     
-    func create(vehicle: Vehicle) -> Bool
+    func createVehicle(vehicle: Vehicle) -> Bool
     
     func getTotalPrice(plate: String) -> Int
     
     func getVehicles() -> [Vehicle]
     
-    func getVehicle(vehicleplate: String) -> Vehicle?
+    func getVehicleByPlate(vehicleplate: String) -> Vehicle?
     
-    func getCars() -> [Vehicle]?
+    func getCars() -> [Vehicle]
     
-    func getBykes() -> [Vehicle]?
+    func getBykes() -> [Vehicle]
     
-    func delete(vehiclePlate: String)
+    func delete(vehiclePlate: String) -> Bool
     
     func vehicleAlreadyExists(vehiclePlate: String) -> Bool
 }

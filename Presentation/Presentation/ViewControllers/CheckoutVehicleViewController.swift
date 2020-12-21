@@ -18,11 +18,11 @@ class CheckoutVehicleViewController: UIViewController {
     @IBOutlet weak var timeOutLabel: UILabel!
     @IBOutlet weak var priceLabel: UILabel!
     @IBAction func checkoutButton(_ sender: Any) {
-        if ((vehicleService?.deleteVehicle(plate: (vehicle?.getPlate())!)) != nil) {
-            _ = navigationController?.popViewController(animated: true)
-        }else{
-            print("no se pudo eliminar el vehiculo")
-        }
+//        if ((vehicleService?.deleteVehicle(plate: (vehicle?.getPlate())!)) != nil) {
+//            _ = navigationController?.popViewController(animated: true)
+//        }else{
+//            print("no se pudo eliminar el vehiculo")
+//        }
     }
     
     var vehicle : Vehicle?
@@ -40,7 +40,7 @@ class CheckoutVehicleViewController: UIViewController {
     
     func setUI() {
         formatter.dateFormat = "MM"
-        setVehicleTypeImage(vehicleType: (vehicle?.getType())!)
+        setVehicleTypeImage(vehicleType: searchVehicleType())
         plateLabel.text = vehicle?.getPlate()
         dayInLabel.text = String(((vehicle?.getDayIn())!-Int(formatter.string(from: date))!) )
         timeInLabel.text = String((vehicle?.getHourIn())!)
@@ -57,6 +57,18 @@ class CheckoutVehicleViewController: UIViewController {
         }
     }
     
+    func  searchVehicleType() -> String {
+        if (vehicleService?.bykeAlreadyExists(plate: (vehicle?.getPlate() ?? "")))! {
+            return "byke"
+        }
+        
+        if (vehicleService?.carAlreadyExits(plate: (vehicle?.getPlate() ?? "")))!{
+            return "car"
+        }
+        
+        return "byke"
+    }
+    
     private func getDateString() -> String {
         formatter.dateFormat = "EEEE, d MMM"
         return formatter.string(from: date)
@@ -68,7 +80,8 @@ class CheckoutVehicleViewController: UIViewController {
     }
     
     func getTotalPrice() -> Int {
-        return (vehicleService?.getTotalprice(plate: (self.vehicle?.getPlate())!))!
+        return 3
+        //return (vehicleService?.getTotalprice(plate: (self.vehicle?.getPlate())!))!
     }
 
 }

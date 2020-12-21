@@ -17,8 +17,6 @@ class VehicleTableViewCell: UITableViewCell {
 
     func set(vehicle: Vehicle) {
         plateLabel.text = vehicle.getPlate()
-
-        setImageType(vehicleType: vehicle.getType())
     }
 
     func setImageType(vehicleType: String) {

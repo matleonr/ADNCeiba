@@ -13,10 +13,13 @@
 		9AE7A15B2583FD2C00A2D8B4 /* Domain.h in Headers */ = {isa = PBXBuildFile; fileRef = 9AE7A14D2583FD2B00A2D8B4 /* Domain.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		9AE7A1792584012900A2D8B4 /* Vehicle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AE7A1752584012900A2D8B4 /* Vehicle.swift */; };
 		9AE7A17A2584012900A2D8B4 /* Vehicle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AE7A1752584012900A2D8B4 /* Vehicle.swift */; };
-		9AE7A1A5258413A500A2D8B4 /* VehicleRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AE7A1A4258413A500A2D8B4 /* VehicleRepository.swift */; };
-		9AE7A1A6258413A500A2D8B4 /* VehicleRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AE7A1A4258413A500A2D8B4 /* VehicleRepository.swift */; };
+		9AE7A1A6258413A500A2D8B4 /* CarRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AE7A1A4258413A500A2D8B4 /* CarRepository.swift */; };
 		9AE7A1C125841CFE00A2D8B4 /* VehicleService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AE7A1C025841CFE00A2D8B4 /* VehicleService.swift */; };
 		A3FA691D33E02E1FD7CF4AFB /* libPods-DomainTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5124153BDCA745BB7079446F /* libPods-DomainTests.a */; };
+		D1394D37258BE77B003A4EB7 /* CarRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AE7A1A4258413A500A2D8B4 /* CarRepository.swift */; };
+		D1394D3D258BEE7F003A4EB7 /* Byke.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1394D3C258BEE7F003A4EB7 /* Byke.swift */; };
+		D1394D41258BEE8D003A4EB7 /* Car.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1394D40258BEE8D003A4EB7 /* Car.swift */; };
+		D1394D68258CCB92003A4EB7 /* BykeRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1394D67258CCB92003A4EB7 /* BykeRepository.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -39,11 +42,14 @@
 		9AE7A1582583FD2C00A2D8B4 /* DomainTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DomainTests.swift; sourceTree = "<group>"; };
 		9AE7A15A2583FD2C00A2D8B4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9AE7A1752584012900A2D8B4 /* Vehicle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Vehicle.swift; sourceTree = "<group>"; };
-		9AE7A1A4258413A500A2D8B4 /* VehicleRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VehicleRepository.swift; sourceTree = "<group>"; };
+		9AE7A1A4258413A500A2D8B4 /* CarRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarRepository.swift; sourceTree = "<group>"; };
 		9AE7A1C025841CFE00A2D8B4 /* VehicleService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VehicleService.swift; sourceTree = "<group>"; };
 		AA23000C079E5F35577AE810 /* Pods-DomainTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DomainTests.debug.xcconfig"; path = "Target Support Files/Pods-DomainTests/Pods-DomainTests.debug.xcconfig"; sourceTree = "<group>"; };
 		C1DD068078F94E3F0C3549B3 /* Pods-Domain.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Domain.debug.xcconfig"; path = "Target Support Files/Pods-Domain/Pods-Domain.debug.xcconfig"; sourceTree = "<group>"; };
 		CCB325D7619B78021D07CC27 /* Pods-DomainTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DomainTests.release.xcconfig"; path = "Target Support Files/Pods-DomainTests/Pods-DomainTests.release.xcconfig"; sourceTree = "<group>"; };
+		D1394D3C258BEE7F003A4EB7 /* Byke.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Byke.swift; sourceTree = "<group>"; };
+		D1394D40258BEE8D003A4EB7 /* Car.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Car.swift; sourceTree = "<group>"; };
+		D1394D67258CCB92003A4EB7 /* BykeRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BykeRepository.swift; sourceTree = "<group>"; };
 		FA5A8EFF7F6DD712B4EE5F1E /* Pods-Domain.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Domain.release.xcconfig"; path = "Target Support Files/Pods-Domain/Pods-Domain.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -134,6 +140,8 @@
 			isa = PBXGroup;
 			children = (
 				9AE7A1752584012900A2D8B4 /* Vehicle.swift */,
+				D1394D3C258BEE7F003A4EB7 /* Byke.swift */,
+				D1394D40258BEE8D003A4EB7 /* Car.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -141,7 +149,8 @@
 		9AE7A1A32584136C00A2D8B4 /* Repository */ = {
 			isa = PBXGroup;
 			children = (
-				9AE7A1A4258413A500A2D8B4 /* VehicleRepository.swift */,
+				9AE7A1A4258413A500A2D8B4 /* CarRepository.swift */,
+				D1394D67258CCB92003A4EB7 /* BykeRepository.swift */,
 			);
 			path = Repository;
 			sourceTree = "<group>";
@@ -312,9 +321,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D1394D3D258BEE7F003A4EB7 /* Byke.swift in Sources */,
 				9AE7A1C125841CFE00A2D8B4 /* VehicleService.swift in Sources */,
+				D1394D68258CCB92003A4EB7 /* BykeRepository.swift in Sources */,
+				D1394D41258BEE8D003A4EB7 /* Car.swift in Sources */,
+				D1394D37258BE77B003A4EB7 /* CarRepository.swift in Sources */,
 				9AE7A1792584012900A2D8B4 /* Vehicle.swift in Sources */,
-				9AE7A1A5258413A500A2D8B4 /* VehicleRepository.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -323,7 +335,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				9AE7A17A2584012900A2D8B4 /* Vehicle.swift in Sources */,
-				9AE7A1A6258413A500A2D8B4 /* VehicleRepository.swift in Sources */,
+				9AE7A1A6258413A500A2D8B4 /* CarRepository.swift in Sources */,
 				9AE7A1592583FD2C00A2D8B4 /* DomainTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

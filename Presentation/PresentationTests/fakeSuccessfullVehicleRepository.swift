@@ -8,7 +8,7 @@
 import Foundation
 import Domain
 
-class fakeSuccessfullVehicleRepository: VehicleRepository {    
+class fakeSuccessfullVehicleRepository: CarRepository {    
     
     func isThereCapacityByType(vehicleType: String) -> Bool {
         return true

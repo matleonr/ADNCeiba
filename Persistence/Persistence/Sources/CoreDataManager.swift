@@ -6,13 +6,14 @@
 //
 
 import CoreData
-import Foundation
 import Domain
+import Foundation
 
 // 1.
 public class CoreDataManager {
     // 2.
     public static let shared = CoreDataManager()
+    let translator = VehicleTranslator()
 
     // 3.
     let identifier: String = "mattdevs.Persistence" // Your framework bundle ID
@@ -37,105 +38,148 @@ public class CoreDataManager {
         return container
     }()
 
-    public func createVehicle(plate: String, dayIn: Int64, hourIn: Int64, cylinderCapacity: Int64, type: String) {
+    public func createByke(byke: Byke) -> Bool {
         let context = persistentContainer.viewContext
-        let vehicleToSave = NSEntityDescription.insertNewObject(forEntityName: "VehicleEntity", into: context) as! VehicleEntity
 
-        vehicleToSave.plate = plate
-        vehicleToSave.dayIn = dayIn
-        vehicleToSave.hourIn = hourIn
-        vehicleToSave.type = type
-        vehicleToSave.cylinderCapacity = cylinderCapacity
+        translator.fromBykeToBykeEntity(byke: byke, context: context)
 
         do {
             try context.save()
             print("✅ Vehicle saved succesfuly")
+            return true
 
         } catch let error {
             print("❌ Failed to create Vehicle: \(error.localizedDescription)")
+            return false
         }
     }
 
-    public func fetch() -> [Vehicle]{
+    public func createCar(car: Car) -> Bool {
         let context = persistentContainer.viewContext
-        var vehiclesGetted = [Vehicle]()
-        let fetchRequest = NSFetchRequest<VehicleEntity>(entityName: "VehicleEntity")
+
+        translator.fromCarToCarEntity(car: car, context: context)
 
         do {
-            let vehicles = try context.fetch(fetchRequest)
+            try context.save()
+            print("✅ Vehicle saved succesfuly")
+            return true
 
-            for vehicle in vehicles {
-                print(vehicle.plate!)
-                let vehicleGetted = Vehicle(day: Int(vehicle.dayIn), hour: Int(vehicle.hourIn), plate: vehicle.plate!, type: vehicle.type!, cylinderCapacity: Int(vehicle.cylinderCapacity))
-                vehiclesGetted.append(vehicleGetted)
+        } catch let error {
+            print("❌ Failed to create Vehicle: \(error.localizedDescription)")
+            return false
+        }
+    }
+
+    public func fetchBykes() -> [Byke] {
+        let context = persistentContainer.viewContext
+        var bykesGetted = [Byke]()
+        let fetchRequest = NSFetchRequest<BykeEntity>(entityName: "BykeEntity")
+
+        do {
+            let bykes = try context.fetch(fetchRequest)
+
+            for byke in bykes {
+                bykesGetted.append(translator.fromBykeEntityToByke(bykeEntity: byke))
             }
 
         } catch let fetchErr {
             print("❌ Failed to fetch Vehicle:", fetchErr)
         }
-        
-        return vehiclesGetted
+
+        return bykesGetted
     }
-    
-    func deleteVehicleByPlate(plate: String) -> Bool {
+
+    public func fetchCars() -> [Car] {
         let context = persistentContainer.viewContext
-        
-        let fetchRequest = NSFetchRequest<VehicleEntity>(entityName: "VehicleEntity")
+        var carsGetted = [Car]()
+        let fetchRequest = NSFetchRequest<CarEntity>(entityName: "CarEntity")
+
+        do {
+            let cars = try context.fetch(fetchRequest)
+
+            for car in cars {
+                carsGetted.append(translator.fromCarEntityToCar(carEntity: car))
+            }
+
+        } catch let fetchErr {
+            print("❌ Failed to fetch Vehicle:", fetchErr)
+        }
+
+        return carsGetted
+    }
+
+    public func deleteBykeByPlate(plate: String) -> Bool {
+        let context = persistentContainer.viewContext
+        let fetchRequest = NSFetchRequest<BykeEntity>(entityName: "BykeEntity")
         let predicate = NSPredicate(format: "plate CONTAINS %@", plate)
+
         fetchRequest.predicate = predicate
-        let vehiclesGetted = try! context.fetch(fetchRequest)
-        for vehicle in vehiclesGetted {
-            context.delete(vehicle)
-            do{
+
+        let bykesGetted = try! context.fetch(fetchRequest)
+        for byke in bykesGetted {
+            context.delete(byke)
+            do {
                 try context.save()
                 return true
-            }
-            catch{
+            } catch {
                 return false
             }
         }
         return false
-        
-        
     }
     
-    public func fetchByPlate(plate: String) -> Vehicle{
-        
+    public func deleteCarByPlate(plate: String) -> Bool {
         let context = persistentContainer.viewContext
-        let fetchRequest = NSFetchRequest<VehicleEntity>(entityName: "VehicleEntity")
+        let fetchRequest = NSFetchRequest<CarEntity>(entityName: "BykeEntity")
         let predicate = NSPredicate(format: "plate CONTAINS %@", plate)
+
         fetchRequest.predicate = predicate
-        let vehiclesGetted = try! context.fetch(fetchRequest)
-        for VehvehicleGetted in vehiclesGetted {
-            
-            let vehicle = Vehicle(day: Int(VehvehicleGetted.dayIn), hour: Int(VehvehicleGetted.hourIn), plate: VehvehicleGetted.plate!, type: VehvehicleGetted.type!, cylinderCapacity: Int(VehvehicleGetted.cylinderCapacity))
-            return vehicle
-            
+
+        let carsGetted = try! context.fetch(fetchRequest)
+        for car in carsGetted {
+            context.delete(car)
+            do {
+                try context.save()
+                return true
+            } catch {
+                return false
+            }
         }
-        
-        let vehicle = Vehicle(day: 0, hour: 0, plate: "", type: "", cylinderCapacity: 0)
-        
-        return vehicle
-        
+        return false
     }
-    
-    public func getVehiclesByType(type:String) -> [Vehicle]{
-        
+
+    public func fetchCarByPlate(plate: String) -> Car {
         let context = persistentContainer.viewContext
-        let fetchRequest = NSFetchRequest<VehicleEntity>(entityName: "VehicleEntity")
-        let predicate = NSPredicate(format: "type CONTAINS %@",type)
+        let fetchRequest = NSFetchRequest<CarEntity>(entityName: "CarEntity")
+        let predicate = NSPredicate(format: "plate CONTAINS %@", plate)
+
         fetchRequest.predicate = predicate
-        var vehicles = [Vehicle]()
-        let vehiclesGetted = try! context.fetch(fetchRequest)
-        for vehicleGetted in vehiclesGetted {
-            
-            let vehicle = Vehicle(day: Int(vehicleGetted.dayIn), hour: Int(vehicleGetted.hourIn), plate: vehicleGetted.plate!, type: vehicleGetted.type!, cylinderCapacity: Int(vehicleGetted.cylinderCapacity))
-            vehicles.append(vehicle)
-            
+
+        let carsGetted = try! context.fetch(fetchRequest)
+        for car in carsGetted {
+            return translator.fromCarEntityToCar(carEntity: car)
         }
-        
-        return vehicles
-        
+
+        let car = Car(day: 0, hour: 0, plate: "")
+
+        return car
+    }
+
+    public func fetchBykeByPlate(plate: String) -> Byke {
+        let context = persistentContainer.viewContext
+        let fetchRequest = NSFetchRequest<BykeEntity>(entityName: "BykeEntity")
+        let predicate = NSPredicate(format: "plate CONTAINS %@", plate)
+
+        fetchRequest.predicate = predicate
+
+        let bykesGetted = try! context.fetch(fetchRequest)
+        for byke in bykesGetted {
+            return translator.fromBykeEntityToByke(bykeEntity: byke)
+        }
+
+        let byke = Byke(day: 0, hour: 0, plate: "", cylinderCapacity: 0)
+
+        return byke
     }
 
 }

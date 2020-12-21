@@ -13,7 +13,7 @@ class PresentationTests: XCTestCase {
     
     func test_GetAllVehiclesOK() {
         // arrange
-        let fakeRepository: VehicleRepository = fakeSuccessfullVehicleRepository()
+        let fakeRepository: CarRepository = fakeSuccessfullVehicleRepository()
         let domainService = VehicleService(vehicleRepository: fakeRepository)
         let vehicleExpected = Vehicle(day: 2, hour: 12, plate: "ABC-123", type: "car", cylinderCapacity: 3000)
 
@@ -26,7 +26,7 @@ class PresentationTests: XCTestCase {
 
     func test_SaveVehicle_CarTypeWithPlateStartinWithB_Success() {
         // arrange
-        let fakeRepository: VehicleRepository = fakeSuccessfullVehicleRepository()
+        let fakeRepository: CarRepository = fakeSuccessfullVehicleRepository()
         let domainService = VehicleService(vehicleRepository: fakeRepository)
         
 
@@ -41,19 +41,20 @@ class PresentationTests: XCTestCase {
 
     func test_GetTotalPrice_3HourAnd1DayCar_returns11000() {
         //arragne
-        let fakeRepository: VehicleRepository = fakeSuccessfullVehicleRepository()
+        let fakeRepository: CarRepository = fakeSuccessfullVehicleRepository()
         let domainService = VehicleService(vehicleRepository: fakeRepository)
         
         //act
         let price = domainService.getTotalprice(plate: "BBC-123")
         let priceExpected = 11000
+        
         //assert
         XCTAssertEqual(price, priceExpected)
     }
     
     func test_DeleteCarWithPlateBAC123_Successful() {
         //arrange
-        let fakeRepository: VehicleRepository = fakeSuccessfullVehicleRepository()
+        let fakeRepository: CarRepository = fakeSuccessfullVehicleRepository()
         let domainService = VehicleService(vehicleRepository: fakeRepository)
         
         //act

@@ -53,6 +53,24 @@ class CurrentVehiclesViewController: UIViewController {
 
     }
     
+    func  searchVehicleType(vehicle: Vehicle) -> String {
+        
+        if (vehicleService?.bykeAlreadyExists(plate: (vehicle.getPlate() )))! {
+        
+            return "byke"
+        
+        }
+        
+        if (vehicleService?.carAlreadyExits(plate: (vehicle.getPlate() )))!{
+         
+            return "car"
+        
+        }
+        
+        return "byke"
+        
+    }
+    
 }
 
 extension CurrentVehiclesViewController: UITableViewDataSource, UITableViewDelegate {
@@ -68,6 +86,7 @@ extension CurrentVehiclesViewController: UITableViewDataSource, UITableViewDeleg
         let vehicle = vehicles[indexPath.row]
         let cell = tableView.dequeueReusableCell(withIdentifier: "VehicleTableViewCell") as! VehicleTableViewCell
         cell.set(vehicle: vehicle)
+        cell.setImageType(vehicleType: searchVehicleType(vehicle: vehicle))
         return cell
         
     }

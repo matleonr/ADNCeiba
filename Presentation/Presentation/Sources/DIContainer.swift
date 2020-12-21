@@ -16,12 +16,17 @@ public class DIContainer {
     
     func registerDependencies() {
         
-        container.register(VehicleRepository.self) {
-            _ in VehicleRepositoryRemote()
+        container.register(BykeRepository.self) {
+            _ in BykeRepositoryRemote()
+        }
+        
+        container.register(CarRepository.self) {
+            _ in CarRepositoryRemote()
         }
         
         container.register(VehicleService.self) {
-            repository in VehicleService(vehicleRepository: repository.resolve(VehicleRepository.self)!)
+            repository in VehicleService(carRepository: repository.resolve(CarRepository.self)!, bykeRepository: repository.resolve(BykeRepository.self)!)
+            
            
         }
     }

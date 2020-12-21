@@ -9,26 +9,75 @@ import XCTest
 @testable import Domain
 
 class DomainTests: XCTestCase {
+    
+    func test_GetAllVehiclesOK() {
+        // arrange
+        let fakeRepository: VehicleRepository = VehicleRepositoryMock()
+        let domainService = VehicleService(vehicleRepository: fakeRepository)
+        let vehicleExpected = Vehicle(day: 2, hour: 12, plate: "ABC-123", type: "car", cylinderCapacity: 3000)
 
-    override func setUpWithError() throws {
-        // Put setup code here. This method is called before the invocation of each test method in the class.
+        // act
+        let plateExpected = vehicleExpected.getPlate()
+        let plateGetted = domainService.getVehicles().first?.getPlate()
+        // assert
+        XCTAssert(plateExpected == plateGetted)
     }
 
-    override func tearDownWithError() throws {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
+    func test_SaveVehicle_CarTypeWithPlateStartinWithB_Success() {
+        // arrange
+        let fakeRepository: VehicleRepository = VehicleRepositoryMock()
+        let domainService = VehicleService(vehicleRepository: fakeRepository)
+        
+
+        let vehicle = Vehicle(day: getDay(), hour: getHour()-3, plate: "BBC-123", type: "car", cylinderCapacity: 2500)
+
+        // act
+        let result = domainService.saveVehicle(vehicle: vehicle)
+
+        // assert
+        XCTAssertEqual(true, result)
     }
 
-    func testExample() throws {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
+    func test_GetTotalPrice_3HourAnd1DayCar_returns11000() {
+        //arragne
+        let fakeRepository: VehicleRepository = VehicleRepositoryMock()
+        let domainService = VehicleService(vehicleRepository: fakeRepository)
+        
+        //act
+        let price = domainService.getTotalprice(plate: "BBC-123")
+        let priceExpected = 11000
+        //assert
+        XCTAssertEqual(price, priceExpected)
     }
-
-    func testPerformanceExample() throws {
-        // This is an example of a performance test case.
-        self.measure {
-            // Put the code you want to measure the time of here.
-        }
+    
+    func test_DeleteCarWithPlateBAC123_Successful() {
+        //arrange
+        let fakeRepository: VehicleRepository = VehicleRepositoryMock()
+        let domainService = VehicleService(vehicleRepository: fakeRepository)
+        
+        //act
+        let result = domainService.deleteVehicle(plate: "BAC-123")
+        
+        //Assert
+        XCTAssertEqual(true, result)
     }
-
-
+    
+    func getDay() -> Int {
+        let date = Date()
+        let formatter = DateFormatter()
+        var day: Int = 0
+        formatter.dateFormat = "d"
+        day = Int(formatter.string(from: date))!
+        formatter.dateFormat = "MM"
+        day = day + Int(formatter.string(from: date))!
+        return day
+    }
+    
+    func getHour() -> Int {
+        let date = Date()
+        let formatter = DateFormatter()
+        formatter.dateFormat = "HH"
+        return Int(formatter.string(from: date))!
+    }
 }
+

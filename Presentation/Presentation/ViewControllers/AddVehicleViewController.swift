@@ -9,7 +9,7 @@ import Domain
 import Persistence
 import UIKit
 
-class AddVehicleViewController: UIViewController {
+class AddVehicleViewController: UIViewController, UITextFieldDelegate {
     
     @IBOutlet var vehicleTypeSegmentedController: UISegmentedControl!
     @IBOutlet var plateTextField: UITextField!
@@ -39,6 +39,7 @@ class AddVehicleViewController: UIViewController {
         vehicleTypeSegmentedController.addTarget(self, action: #selector(changeForm), for: .valueChanged)
         dayTextField.text = getDateString()
         timeTextField.text = getHourString()
+        plateTextField.tag = 1
         let tap = UITapGestureRecognizer(target: self, action: #selector(UIInputViewController.dismissKeyboard))
         view.addGestureRecognizer(tap)
     
@@ -103,14 +104,18 @@ class AddVehicleViewController: UIViewController {
     private func saveCar() {
         
         let car = Car(day: getDay(), hour: getHour(), plate: plateTextField.text!)
-        vehicleService?.saveCar(car: car)
+        if (vehicleService?.saveCar(car: car))! {
+            _ = navigationController?.popViewController(animated: true)
+        }
         
     }
     
     private func saveByke() {
         
         let byke = Byke(day: getDay(), hour: getHour(), plate: plateTextField.text!, cylinderCapacity: Int(cylinderCapacityTextField.text!)!)
-        vehicleService?.saveByke(byke: byke)
+        if (vehicleService?.saveByke(byke: byke))! {
+            _ = navigationController?.popViewController(animated: true)
+        }
         
     }
 
@@ -129,6 +134,18 @@ class AddVehicleViewController: UIViewController {
             cylinderCapacityTextField.isHidden = false
             divider4.isHidden = false
         }
+        
+    }
+    
+    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
+        
+        if textField.tag==1 {
+            let numberOnly = NSCharacterSet.init(charactersIn: "1234567890-ABCDEFGHIJKLMNOPQRSTUVXYZ").inverted
+            let strValid = string.rangeOfCharacter(from: numberOnly) == nil
+            return strValid
+        }
+        return true
+        
         
     }
     

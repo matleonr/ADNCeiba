@@ -18,11 +18,25 @@ class CheckoutVehicleViewController: UIViewController {
     @IBOutlet weak var timeOutLabel: UILabel!
     @IBOutlet weak var priceLabel: UILabel!
     @IBAction func checkoutButton(_ sender: Any) {
-//        if ((vehicleService?.deleteVehicle(plate: (vehicle?.getPlate())!)) != nil) {
-//            _ = navigationController?.popViewController(animated: true)
-//        }else{
-//            print("no se pudo eliminar el vehiculo")
-//        }
+        checkoutVehicle(plate: (vehicle?.getPlate())!)
+    }
+    
+    func checkoutVehicle(plate:String) {
+    
+        if  searchVehicleType() == "car" {
+            if (vehicleService?.deleteCar(plate: plate))! {
+                _ = navigationController?.popViewController(animated: true)
+            }else{
+                print("no se pudo eliminar el carro")
+            }
+        }else{
+            if (vehicleService?.deleteByke(plate: plate))! {
+                _ = navigationController?.popViewController(animated: true)
+            }else{
+                print("no se pudo eliminar la moto")
+            }
+        }
+        
     }
     
     var vehicle : Vehicle?
@@ -80,8 +94,10 @@ class CheckoutVehicleViewController: UIViewController {
     }
     
     func getTotalPrice() -> Int {
-        return 3
-        //return (vehicleService?.getTotalprice(plate: (self.vehicle?.getPlate())!))!
+        if searchVehicleType() == "car" {
+            return (vehicleService?.getTotalPriceCar(plate: (vehicle?.getPlate())!))!
+        }
+        return (vehicleService?.getTotalPriceByke(plate: (vehicle?.getPlate())!))!
     }
 
 }

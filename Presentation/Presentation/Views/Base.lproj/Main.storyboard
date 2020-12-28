@@ -149,6 +149,9 @@
                                                 <rect key="frame" x="178" y="21.5" width="216" height="18.5"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits"/>
+                                                <connections>
+                                                    <outlet property="delegate" destination="rwu-n6-bf6" id="zBg-ee-sMD"/>
+                                                </connections>
                                             </textField>
                                             <textField opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Friday" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Z3z-dD-2Ls">
                                                 <rect key="frame" x="178" y="59.5" width="216" height="18.5"/>
@@ -210,6 +213,9 @@
                                                 <rect key="frame" x="178" y="135.5" width="216" height="18.5"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
+                                                <connections>
+                                                    <outlet property="delegate" destination="rwu-n6-bf6" id="cwc-T1-M6T"/>
+                                                </connections>
                                             </textField>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Cylinder Capacity" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xfb-wN-Jhg">
                                                 <rect key="frame" x="20" y="134" width="150" height="21"/>

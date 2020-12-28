@@ -40,6 +40,7 @@ class AddVehicleViewController: UIViewController, UITextFieldDelegate {
         dayTextField.text = getDateString()
         timeTextField.text = getHourString()
         plateTextField.tag = 1
+        cylinderCapacityTextField.tag = 2
         let tap = UITapGestureRecognizer(target: self, action: #selector(UIInputViewController.dismissKeyboard))
         view.addGestureRecognizer(tap)
     
@@ -92,15 +93,7 @@ class AddVehicleViewController: UIViewController, UITextFieldDelegate {
         }
         
     }
-        
-//        let vehicle: Vehicle = try Vehicle(day: getDay(), hour: getHour(), plate: plateTextField.text!, type: getCarType(), cylinderCapacity: setCylinderCapacity())
-//
-//        vehicleService?.saveVehicle(vehicle: vehicle)
-//        print("Se ha guardado correctamente")
-//        _ = navigationController?.popViewController(animated: true)
-//
-//    }
-
+    
     private func saveCar() {
         
         let car = Car(day: getDay(), hour: getHour(), plate: plateTextField.text!)
@@ -141,6 +134,12 @@ class AddVehicleViewController: UIViewController, UITextFieldDelegate {
         
         if textField.tag==1 {
             let numberOnly = NSCharacterSet.init(charactersIn: "1234567890-ABCDEFGHIJKLMNOPQRSTUVXYZ").inverted
+            let strValid = string.rangeOfCharacter(from: numberOnly) == nil
+            return strValid
+        }
+        
+        if textField.tag==2 {
+            let numberOnly = NSCharacterSet.init(charactersIn: "1234567890").inverted
             let strValid = string.rangeOfCharacter(from: numberOnly) == nil
             return strValid
         }

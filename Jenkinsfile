@@ -40,7 +40,7 @@ pipeline {
     stage('Unit Tests') {
       steps{
         echo "------------>Unit Tests<------------"
-	    	sh 'xcodebuild -scheme "Presentation" test -destination "platform=iOS Simulator,name=iPhone 11 Pro Max,OS=14.2" CODE_SIGNING_REQUIRED=NO CODE_SIGNING_ALLOWED="NO"'
+	    	//sh 'xcodebuild -scheme "Presentation" test -destination "platform=iOS Simulator,name=iPhone 11 Pro Max,OS=14.2" CODE_SIGNING_REQUIRED=NO CODE_SIGNING_ALLOWED="NO"'
 
       }
     }

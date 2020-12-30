@@ -28,7 +28,7 @@ target 'Persistence' do
     
     #pod 'Realm',  :modular_headers => true
     #pod 'RealmSwift',  :modular_headers => true
-    pod 'SQLite.swift'
+    #pod 'SQLite.swift'
 end
 
 target 'Domain' do

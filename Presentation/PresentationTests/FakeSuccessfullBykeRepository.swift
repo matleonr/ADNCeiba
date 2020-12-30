@@ -1,5 +1,5 @@
 //
-//  fakeSuccessfullBykeRepository.swift
+//  FakeSuccessfullBykeRepository.swift
 //  PresentationTests
 //
 //  Created by Mateo Léon Restrepo - Ceiba Software on 28/12/20.
@@ -8,7 +8,7 @@
 import Foundation
 import Domain
 
-class fakeSuccessfullBykeRepository: BykeRepository {
+class FakeSuccessfullBykeRepository: BykeRepository {
     
     func createByke(byke: Byke) -> Bool {
         

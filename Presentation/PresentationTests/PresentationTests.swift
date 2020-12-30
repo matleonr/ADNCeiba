@@ -28,7 +28,7 @@ class PresentationTests: XCTestCase {
 //    func test_SaveCar_WithPlateStartinWithF_Success() {
 //        // arrange
 //        let fakeCarRepository: CarRepository = fakeSuccessfullCarRepository()
-//        let fakeBykeRepository: BykeRepository = fakeSuccessfullBykeRepository()
+//        let fakeBykeRepository: BykeRepository = FakeSuccessfullBykeRepository()
 //        let domainService = VehicleService(carRepository: fakeCarRepository, bykeRepository: fakeBykeRepository)
 //
 //

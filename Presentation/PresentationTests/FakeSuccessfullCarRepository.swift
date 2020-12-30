@@ -8,7 +8,7 @@
 import Foundation
 import Domain
 
-class fakeSuccessfullCarRepository: CarRepository {
+class FakeSuccessfullCarRepository: CarRepository {
     
     func createCar(vehicle: Car) -> Bool {
         

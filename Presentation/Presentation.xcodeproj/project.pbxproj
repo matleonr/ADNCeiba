@@ -24,8 +24,10 @@
 		9AE7A1E5258574A200A2D8B4 /* VehicleTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AE7A1E3258574A200A2D8B4 /* VehicleTableViewCell.swift */; };
 		9AE7A1E6258574A200A2D8B4 /* VehicleTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AE7A1E3258574A200A2D8B4 /* VehicleTableViewCell.swift */; };
 		D1394D02258B85E0003A4EB7 /* CheckoutVehicleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1394D01258B85E0003A4EB7 /* CheckoutVehicleViewController.swift */; };
-		D1657ED1258AE310003EFC1D /* fakeSuccessfullCarRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1657ED0258AE310003EFC1D /* fakeSuccessfullCarRepository.swift */; };
-		D1D5987C259A33E200DF7FD9 /* fakeSuccessfullBykeRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1D5987B259A33E200DF7FD9 /* fakeSuccessfullBykeRepository.swift */; };
+		D1657ED1258AE310003EFC1D /* FakeSuccessfullCarRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1657ED0258AE310003EFC1D /* FakeSuccessfullCarRepository.swift */; };
+		D1D5987C259A33E200DF7FD9 /* FakeSuccessfullBykeRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1D5987B259A33E200DF7FD9 /* FakeSuccessfullBykeRepository.swift */; };
+		D1D5987F259A65AF00DF7FD9 /* FakeSuccessfullCarRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1657ED0258AE310003EFC1D /* FakeSuccessfullCarRepository.swift */; };
+		D1D59882259A65B300DF7FD9 /* FakeSuccessfullBykeRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1D5987B259A33E200DF7FD9 /* FakeSuccessfullBykeRepository.swift */; };
 		D1F06CCB258B2F3B00D97F78 /* Persistence.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D1F06CCA258B2F3B00D97F78 /* Persistence.framework */; };
 		D1F06CCC258B2F3B00D97F78 /* Persistence.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = D1F06CCA258B2F3B00D97F78 /* Persistence.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		DB51D100CDC18AFA7E26D800 /* libPods-Presentation.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 127B3DFD9627593088C2F392 /* libPods-Presentation.a */; };
@@ -96,9 +98,9 @@
 		D1394D01258B85E0003A4EB7 /* CheckoutVehicleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckoutVehicleViewController.swift; sourceTree = "<group>"; };
 		D1657E63258AB174003EFC1D /* Persistence.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Persistence.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D1657EA2258AB384003EFC1D /* Persistence.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Persistence.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		D1657ED0258AE310003EFC1D /* fakeSuccessfullCarRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = fakeSuccessfullCarRepository.swift; sourceTree = "<group>"; };
+		D1657ED0258AE310003EFC1D /* FakeSuccessfullCarRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FakeSuccessfullCarRepository.swift; sourceTree = "<group>"; };
 		D1657F25258AF76E003EFC1D /* Persistence.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Persistence.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		D1D5987B259A33E200DF7FD9 /* fakeSuccessfullBykeRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = fakeSuccessfullBykeRepository.swift; sourceTree = "<group>"; };
+		D1D5987B259A33E200DF7FD9 /* FakeSuccessfullBykeRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FakeSuccessfullBykeRepository.swift; sourceTree = "<group>"; };
 		D1F06CCA258B2F3B00D97F78 /* Persistence.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Persistence.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -170,8 +172,8 @@
 			children = (
 				9AE7A1242583FCF000A2D8B4 /* PresentationTests.swift */,
 				9AE7A1262583FCF000A2D8B4 /* Info.plist */,
-				D1657ED0258AE310003EFC1D /* fakeSuccessfullCarRepository.swift */,
-				D1D5987B259A33E200DF7FD9 /* fakeSuccessfullBykeRepository.swift */,
+				D1657ED0258AE310003EFC1D /* FakeSuccessfullCarRepository.swift */,
+				D1D5987B259A33E200DF7FD9 /* FakeSuccessfullBykeRepository.swift */,
 			);
 			path = PresentationTests;
 			sourceTree = "<group>";
@@ -455,6 +457,8 @@
 				9A4649DB258581F300C898A0 /* AddVehicleViewController.swift in Sources */,
 				D1394D02258B85E0003A4EB7 /* CheckoutVehicleViewController.swift in Sources */,
 				9AE7A10E2583FCED00A2D8B4 /* AppDelegate.swift in Sources */,
+				D1D5987F259A65AF00DF7FD9 /* FakeSuccessfullCarRepository.swift in Sources */,
+				D1D59882259A65B300DF7FD9 /* FakeSuccessfullBykeRepository.swift in Sources */,
 				9AE7A1102583FCED00A2D8B4 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -463,10 +467,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D1D5987C259A33E200DF7FD9 /* fakeSuccessfullBykeRepository.swift in Sources */,
+				D1D5987C259A33E200DF7FD9 /* FakeSuccessfullBykeRepository.swift in Sources */,
 				9AE7A1E5258574A200A2D8B4 /* VehicleTableViewCell.swift in Sources */,
 				9AE7A1252583FCF000A2D8B4 /* PresentationTests.swift in Sources */,
-				D1657ED1258AE310003EFC1D /* fakeSuccessfullCarRepository.swift in Sources */,
+				D1657ED1258AE310003EFC1D /* FakeSuccessfullCarRepository.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
